@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ForgeBot - AI Workspace Assistant</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; color: white; }
+        .slide { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 60px; border-bottom: 1px solid #333; }
+        h1 { font-size: 4rem; margin-bottom: 20px; background: linear-gradient(135deg, #EA580C, #F97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        h2 { font-size: 2.5rem; margin-bottom: 30px; color: #EA580C; }
+        h3 { font-size: 1.8rem; margin: 20px 0 10px; color: #F97316; }
+        p, li { font-size: 1.4rem; line-height: 1.8; color: #ccc; }
+        ul { list-style: none; text-align: left; max-width: 800px; }
+        li { padding: 10px 0; padding-left: 30px; position: relative; }
+        li::before { content: "→"; position: absolute; left: 0; color: #EA580C; }
+        .subtitle { font-size: 1.5rem; color: #888; margin-top: 10px; }
+        .emoji { font-size: 5rem; margin-bottom: 20px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1000px; text-align: left; }
+        .card { background: #1a1a1a; padding: 30px; border-radius: 12px; border: 1px solid #333; }
+        .card h3 { margin-top: 0; }
+        code { background: #2a2a2a; padding: 4px 12px; border-radius: 6px; font-size: 1.2rem; display: inline-block; margin: 5px 0; }
+        .highlight { color: #EA580C; font-weight: bold; }
+        .check { color: #22c55e; }
+        .cta { background: linear-gradient(135deg, #EA580C, #F97316); padding: 20px 40px; border-radius: 12px; font-size: 1.5rem; margin-top: 30px; }
+        .slide-num { position: fixed; bottom: 20px; right: 30px; color: #555; font-size: 1rem; }
+    </style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<div class="slide">
+    <div class="emoji">🤖</div>
+    <h1>ForgeBot</h1>
+    <p class="subtitle">Your AI-Powered Workspace Assistant</p>
+    <p style="margin-top: 40px; color: #666;">Powered by Claude • Built for ArcheForge</p>
+</div>
+
+<!-- Slide 2: What is ForgeBot -->
+<div class="slide">
+    <h2>What is ForgeBot?</h2>
+    <ul>
+        <li>AI assistant that <span class="highlight">lives in your Slack</span></li>
+        <li>Answers questions, writes code, manages tasks</li>
+        <li>Remembers context across conversations</li>
+        <li>Available <span class="highlight">24/7</span> — just DM or @mention</li>
+    </ul>
+</div>
+
+<!-- Slide 3: Capabilities Grid -->
+<div class="slide">
+    <h2>What Can ForgeBot Do?</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>💬 Communication</h3>
+            <li>Send messages to teammates</li>
+            <li>Summarize conversations</li>
+            <li>Draft emails & documents</li>
+        </div>
+        <div class="card">
+            <h3>🔍 Research</h3>
+            <li>Search the web instantly</li>
+            <li>Fetch & summarize articles</li>
+            <li>Answer complex questions</li>
+        </div>
+        <div class="card">
+            <h3>💻 Development</h3>
+            <li>Write and review code</li>
+            <li>Debug issues</li>
+            <li>Explain technical concepts</li>
+        </div>
+        <div class="card">
+            <h3>📋 Task Management</h3>
+            <li>Create to-do lists</li>
+            <li>Set reminders</li>
+            <li>Track project progress</li>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 4: Examples -->
+<div class="slide">
+    <h2>Just Ask Naturally</h2>
+    <ul>
+        <li><code>"Summarize this document for me"</code></li>
+        <li><code>"Write a Python script that..."</code></li>
+        <li><code>"Send a message to @teammate about the deadline"</code></li>
+        <li><code>"What's on my calendar today?"</code></li>
+        <li><code>"Help me debug this error"</code></li>
+        <li><code>"Research competitors in the AI space"</code></li>
+    </ul>
+</div>
+
+<!-- Slide 5: Security -->
+<div class="slide">
+    <h2>Security & Privacy</h2>
+    <ul>
+        <li><span class="check">✅</span> Runs on your infrastructure</li>
+        <li><span class="check">✅</span> Workspace-scoped access</li>
+        <li><span class="check">✅</span> No data stored by third parties</li>
+        <li><span class="check">✅</span> Audit logs available</li>
+        <li><span class="check">✅</span> Enterprise-grade encryption</li>
+    </ul>
+</div>
+
+<!-- Slide 6: Get Started -->
+<div class="slide">
+    <h2>Get Started in 3 Steps</h2>
+    <ul>
+        <li><span class="highlight">1.</span> Find <strong>ForgeBot</strong> in your Slack sidebar</li>
+        <li><span class="highlight">2.</span> Click to open a DM</li>
+        <li><span class="highlight">3.</span> Say "hello" and start chatting!</li>
+    </ul>
+    <div class="cta">Already installed in ArcheForge Slack! 🎉</div>
+</div>
+
+<!-- Slide 7: Questions -->
+<div class="slide">
+    <div class="emoji">🦞</div>
+    <h1>Questions?</h1>
+    <p class="subtitle">ForgeBot — Making work easier, one message at a time.</p>
+    <p style="margin-top: 60px; color: #555;">Built with Clawdbot • Powered by Claude</p>
+</div>
+
+</body>
+</html>
