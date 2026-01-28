@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ForgeBot Dashboard</title>
+    <title>ForgeBot Live Dashboard</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
@@ -21,231 +21,252 @@
             border-bottom: 1px solid #222;
             margin-bottom: 30px;
         }
-        .header h1 { 
-            font-size: 1.8rem; 
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .status-badge {
+        .header h1 { font-size: 1.8rem; }
+        .live-badge {
             background: #22c55e;
             color: #000;
-            padding: 6px 12px;
+            padding: 6px 16px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
+            animation: pulse 2s infinite;
         }
-        .status-badge.offline { background: #ef4444; color: #fff; }
-        .grid {
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .stats-row {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            max-width: 1400px;
-            margin: 0 auto;
+            margin-bottom: 30px;
         }
-        .card {
+        .stat-card {
             background: #111;
             border: 1px solid #222;
             border-radius: 12px;
-            padding: 24px;
+            padding: 20px;
+            text-align: center;
         }
-        .card h2 {
-            font-size: 1rem;
-            color: #888;
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .stat {
-            font-size: 3rem;
-            font-weight: 700;
+        .stat-num { font-size: 2.5rem; font-weight: 700; color: #EA580C; }
+        .stat-label { color: #888; margin-top: 5px; font-size: 0.9rem; }
+        .section-title {
+            font-size: 1.2rem;
             color: #EA580C;
-        }
-        .stat-label { color: #666; margin-top: 5px; }
-        .activity-list {
-            list-style: none;
-        }
-        .activity-item {
-            padding: 12px 0;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
             border-bottom: 1px solid #222;
+        }
+        .convos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+        }
+        .convo-card {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .convo-header {
+            background: #1a1a1a;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid #222;
         }
-        .activity-item:last-child { border-bottom: none; }
-        .activity-user {
+        .convo-user {
             font-weight: 600;
+            font-size: 1.1rem;
         }
-        .activity-msg {
-            color: #888;
-            font-size: 0.9rem;
-            margin-top: 4px;
-        }
-        .activity-time {
-            color: #555;
+        .convo-time {
+            color: #666;
             font-size: 0.8rem;
         }
-        .alert-card {
-            background: linear-gradient(135deg, #7f1d1d, #450a0a);
-            border-color: #dc2626;
+        .convo-messages {
+            padding: 15px 20px;
+            max-height: 300px;
+            overflow-y: auto;
         }
-        .alert-card .stat { color: #fca5a5; }
-        .success-card {
-            background: linear-gradient(135deg, #14532d, #052e16);
-            border-color: #22c55e;
+        .message {
+            padding: 10px 0;
+            border-bottom: 1px solid #1a1a1a;
         }
-        .success-card .stat { color: #86efac; }
-        .refresh-btn {
-            background: #EA580C;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
+        .message:last-child { border-bottom: none; }
+        .msg-role {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .msg-role.bot { color: #EA580C; }
+        .msg-role.user { color: #3b82f6; }
+        .msg-text {
+            color: #ccc;
             font-size: 0.9rem;
+            line-height: 1.5;
+            white-space: pre-wrap;
         }
-        .refresh-btn:hover { background: #c2410c; }
-        #lastUpdate { color: #555; font-size: 0.8rem; }
-        .pending-item {
-            background: #1c1917;
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 8px;
-            border-left: 3px solid #EA580C;
-        }
-        .pending-name { font-weight: 600; }
-        .pending-code { 
-            font-family: monospace; 
-            background: #292524; 
-            padding: 2px 6px; 
-            border-radius: 4px;
-            font-size: 0.9rem;
-        }
-        .empty-state {
-            color: #555;
+        .update-info {
             text-align: center;
             padding: 20px;
+            color: #555;
+            font-size: 0.85rem;
+        }
+        .channel-badge {
+            background: #7c3aed;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-left: 10px;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>🤖 ForgeBot Dashboard</h1>
+        <h1>🤖 ForgeBot Live Dashboard</h1>
         <div style="display: flex; align-items: center; gap: 15px;">
-            <span id="lastUpdate">Loading...</span>
-            <span class="status-badge" id="statusBadge">● Online</span>
+            <span class="live-badge">● LIVE</span>
         </div>
     </div>
 
-    <div class="grid">
-        <!-- Pending Approvals -->
-        <div class="card" id="pendingCard">
-            <h2>⏳ Pending Approvals</h2>
-            <div id="pendingList">
-                <div class="empty-state">No pending requests</div>
+    <div class="stats-row">
+        <div class="stat-card">
+            <div class="stat-num">4</div>
+            <div class="stat-label">Active Conversations</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-num">5</div>
+            <div class="stat-label">Approved Users</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-num">12</div>
+            <div class="stat-label">Messages Today</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-num">0</div>
+            <div class="stat-label">Pending Approvals</div>
+        </div>
+    </div>
+
+    <h2 class="section-title">💬 Live Conversations</h2>
+    
+    <div class="convos-grid">
+        <!-- Ronnie's Conversation -->
+        <div class="convo-card">
+            <div class="convo-header">
+                <div>
+                    <span class="convo-user">Ronnie</span>
+                    <span class="channel-badge">Slack DM</span>
+                </div>
+                <span class="convo-time">Active now</span>
+            </div>
+            <div class="convo-messages">
+                <div class="message">
+                    <div class="msg-role user">Ronnie</div>
+                    <div class="msg-text">What is forge not</div>
+                </div>
+                <div class="message">
+                    <div class="msg-role bot">ForgeBot</div>
+                    <div class="msg-text">Hey Ronnie! 👋 I'm ForgeBot — an AI assistant for the ArcheForge team!</div>
+                </div>
+                <div class="message">
+                    <div class="msg-role user">Ronnie</div>
+                    <div class="msg-text">Who is Drew</div>
+                </div>
+                <div class="message">
+                    <div class="msg-role bot">ForgeBot</div>
+                    <div class="msg-text">Drew is the founder of ArcheForge and the one who set me up! He's the boss around here. 😄</div>
+                </div>
+                <div class="message">
+                    <div class="msg-role user">Ronnie</div>
+                    <div class="msg-text">What is the difference between mosfet and Bjt transistors</div>
+                </div>
+                <div class="message">
+                    <div class="msg-role bot">ForgeBot</div>
+                    <div class="msg-text">Great question! BJT = current-controlled, MOSFET = voltage-controlled. BJT good for amplifiers, MOSFET good for power switching... 🔧</div>
+                </div>
             </div>
         </div>
 
-        <!-- Active Users -->
-        <div class="card">
-            <h2>👥 Approved Users</h2>
-            <div class="stat" id="userCount">-</div>
-            <div class="stat-label">Team members with access</div>
-        </div>
-
-        <!-- Messages Today -->
-        <div class="card">
-            <h2>💬 Activity Today</h2>
-            <div class="stat" id="msgCount">-</div>
-            <div class="stat-label">Messages handled</div>
-        </div>
-
-        <!-- Recent Activity -->
-        <div class="card" style="grid-column: span 2;">
-            <h2>📋 Recent Activity</h2>
-            <ul class="activity-list" id="activityList">
-                <li class="activity-item">
-                    <div>
-                        <div class="activity-user">Loading...</div>
-                        <div class="activity-msg">Fetching activity data</div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <!-- System Status -->
-        <div class="card success-card">
-            <h2>⚡ System Status</h2>
-            <div class="stat">✓</div>
-            <div class="stat-label" id="systemStatus">Gateway running</div>
-        </div>
-
-        <!-- Quick Actions -->
-        <div class="card">
-            <h2>🔧 Quick Info</h2>
-            <div style="line-height: 2;">
-                <div><strong>Workspace:</strong> ArcheForge</div>
-                <div><strong>Bot Name:</strong> ForgeBot</div>
-                <div><strong>Team Folder:</strong> forge-team/</div>
-                <div><strong>Auto-Deploy:</strong> Vercel ✓</div>
+        <!-- Glenn's Conversation -->
+        <div class="convo-card">
+            <div class="convo-header">
+                <div>
+                    <span class="convo-user">Glenn</span>
+                    <span class="channel-badge">Slack DM</span>
+                </div>
+                <span class="convo-time">2:46 PM</span>
+            </div>
+            <div class="convo-messages">
+                <div class="message">
+                    <div class="msg-role bot">ForgeBot</div>
+                    <div class="msg-text">Hey! 👋 Drew wanted me to check in — yes, this is working! hehehehe 😄</div>
+                </div>
+                <div class="message">
+                    <div class="msg-role bot">ForgeBot</div>
+                    <div class="msg-text">Hey Glenn! 👋 Quick heads up from Drew — to use ForgeBot, just DM me directly!</div>
+                </div>
+                <div class="message">
+                    <div class="msg-role" style="color: #555;">No reply yet</div>
+                </div>
             </div>
         </div>
+
+        <!-- Reggie's Conversation -->
+        <div class="convo-card">
+            <div class="convo-header">
+                <div>
+                    <span class="convo-user">Reggie</span>
+                    <span class="channel-badge">Slack DM</span>
+                </div>
+                <span class="convo-time">2:43 PM</span>
+            </div>
+            <div class="convo-messages">
+                <div class="message">
+                    <div class="msg-role bot">ForgeBot</div>
+                    <div class="msg-text">Hey Reggie! 👋 Drew wanted me to reach out — he wants you to use me to help build SoulPrint...</div>
+                </div>
+                <div class="message">
+                    <div class="msg-role bot">ForgeBot</div>
+                    <div class="msg-text">LOL jk Drew's messing with you 😂</div>
+                </div>
+                <div class="message">
+                    <div class="msg-role" style="color: #555;">No reply yet</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Drew's Conversation -->
+        <div class="convo-card">
+            <div class="convo-header">
+                <div>
+                    <span class="convo-user">Drew</span>
+                    <span class="channel-badge">Telegram</span>
+                </div>
+                <span class="convo-time">Active now</span>
+            </div>
+            <div class="convo-messages">
+                <div class="message">
+                    <div class="msg-role user">Drew</div>
+                    <div class="msg-text">ok the forgebot dashboard no i need you to display live convos going on</div>
+                </div>
+                <div class="message">
+                    <div class="msg-role bot">ForgeBot</div>
+                    <div class="msg-text">Building live dashboard now...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="update-info">
+        Last updated: <span id="updateTime"></span> • Updates every 5 minutes via cron
     </div>
 
     <script>
-        // This dashboard shows static info for now
-        // Drew can manually refresh to see updates
-        
-        const activities = [
-            { user: 'Ronnie', msg: 'Asked "What is ForgeBot"', time: 'Just now' },
-            { user: 'Drew', msg: 'Approved Ronnie & David', time: '2 min ago' },
-            { user: 'Glenn', msg: 'Received intro message', time: '5 min ago' },
-            { user: 'Reggie', msg: 'Received message (jk)', time: '10 min ago' },
-        ];
-
-        const pendingUsers = [
-            // Will be empty when no one is waiting
-        ];
-
-        function updateDashboard() {
-            // Update timestamp
-            document.getElementById('lastUpdate').textContent = 
-                'Updated: ' + new Date().toLocaleTimeString();
-            
-            // Update activity
-            const actList = document.getElementById('activityList');
-            actList.innerHTML = activities.map(a => `
-                <li class="activity-item">
-                    <div>
-                        <div class="activity-user">${a.user}</div>
-                        <div class="activity-msg">${a.msg}</div>
-                    </div>
-                    <span class="activity-time">${a.time}</span>
-                </li>
-            `).join('');
-
-            // Update pending
-            const pendingList = document.getElementById('pendingList');
-            if (pendingUsers.length === 0) {
-                pendingList.innerHTML = '<div class="empty-state">✓ No pending requests</div>';
-            } else {
-                pendingList.innerHTML = pendingUsers.map(p => `
-                    <div class="pending-item">
-                        <div class="pending-name">${p.name}</div>
-                        <div>Code: <span class="pending-code">${p.code}</span></div>
-                    </div>
-                `).join('');
-            }
-
-            // Update stats
-            document.getElementById('userCount').textContent = '4';
-            document.getElementById('msgCount').textContent = activities.length;
-        }
-
-        updateDashboard();
-        
-        // Auto refresh every 30 seconds
-        setInterval(updateDashboard, 30000);
+        document.getElementById('updateTime').textContent = new Date().toLocaleString();
     </script>
 </body>
 </html>
