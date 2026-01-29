@@ -123,6 +123,7 @@
             margin-left: 10px;
         }
         .channel-badge.telegram { background: #0088cc; }
+        .channel-badge.active { background: #22c55e; }
     </style>
 </head>
 <body>
@@ -135,7 +136,7 @@
 
     <div class="stats-row">
         <div class="stat-card">
-            <div class="stat-num">4</div>
+            <div class="stat-num">5</div>
             <div class="stat-label">Slack Conversations</div>
         </div>
         <div class="stat-card">
@@ -143,7 +144,7 @@
             <div class="stat-label">Active Subagents</div>
         </div>
         <div class="stat-card">
-            <div class="stat-num">13</div>
+            <div class="stat-num">11</div>
             <div class="stat-label">Total Sessions</div>
         </div>
         <div class="stat-card">
@@ -155,35 +156,47 @@
     <h2 class="section-title">💬 Slack Conversations</h2>
     
     <div class="convos-grid">
-        <!-- Ronnie's Conversation (Channel) -->
+        <!-- Ronnie's Active Project -->
         <div class="convo-card">
             <div class="convo-header">
                 <div>
                     <span class="convo-user">Ronnie</span>
-                    <span class="channel-badge">Slack Channel</span>
+                    <span class="channel-badge active">🔥 BUILDING</span>
                 </div>
-                <span class="convo-time">Jan 28, 10:31 PM</span>
+                <span class="convo-time">Just Now</span>
             </div>
             <div class="convo-messages">
                 <div class="message">
                     <div class="msg-role bot">ForgeBot</div>
-                    <div class="msg-text">Hey Ronnie! 👋 I'm ForgeBot — an AI assistant for the ArcheForge team!
+                    <div class="msg-text">Nice! I've got what I need. Here's the plan:
 
-What I can do:
-• Answer questions & research topics
-• Write code and help debug
-• Build web pages & tools
-• Draft documents & summarize content</div>
+**Comic Book Generator** 🎨
+- Uses Kie AI's Nano Banana for image generation
+- User describes a story → break into 4-6 comic panels
+- Generate each panel with comic book style prompts
+- Display in a classic comic layout
+
+Let me build a working prototype...</div>
                 </div>
                 <div class="message">
-                    <div class="msg-role bot">ForgeBot</div>
-                    <div class="msg-text">Drew is the founder of ArcheForge and the one who set me up! He's the boss around here. 😄</div>
+                    <div class="msg-role" style="color: #22c55e;">⚡ Building /forge-team/comic-generator...</div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Drew's Channel -->
+        <div class="convo-card">
+            <div class="convo-header">
+                <div>
+                    <span class="convo-user">Drew</span>
+                    <span class="channel-badge">Slack Channel</span>
+                </div>
+                <span class="convo-time">Jan 29, 6:10 AM</span>
+            </div>
+            <div class="convo-messages">
                 <div class="message">
                     <div class="msg-role bot">ForgeBot</div>
-                    <div class="msg-text">Great question! BJT = current-controlled, MOSFET = voltage-controlled.
-• BJT: good for amplifiers, linear circuits
-• MOSFET: good for power switching, digital circuits 🔧</div>
+                    <div class="msg-text">Hey Drew! 👋 Working on SoulPrint stuff with you on Telegram right now — just bumped up the hero headline to 35% bigger and got a couple sub-agents running. What's up?</div>
                 </div>
             </div>
         </div>
@@ -206,9 +219,6 @@ What I can do:
                     <div class="msg-role bot">ForgeBot</div>
                     <div class="msg-text">Hey Glenn! 👋 Quick heads up from Drew — to use ForgeBot, just DM me directly! You can ask me anything.</div>
                 </div>
-                <div class="message">
-                    <div class="msg-role" style="color: #555;">Awaiting reply...</div>
-                </div>
             </div>
         </div>
 
@@ -229,9 +239,6 @@ What I can do:
                 <div class="message">
                     <div class="msg-role bot">ForgeBot</div>
                     <div class="msg-text">LOL jk Drew's messing with you 😂</div>
-                </div>
-                <div class="message">
-                    <div class="msg-role" style="color: #555;">Awaiting reply...</div>
                 </div>
             </div>
         </div>
@@ -254,44 +261,43 @@ What I can do:
 
 — Drew 💛</div>
                 </div>
-                <div class="message">
-                    <div class="msg-role" style="color: #555;">Awaiting reply...</div>
-                </div>
             </div>
         </div>
     </div>
 
-    <h2 class="section-title" style="margin-top: 30px;">🔧 Recent Subagent Work (SoulPrint)</h2>
+    <h2 class="section-title" style="margin-top: 30px;">🔧 Recent Projects</h2>
     
     <div class="convos-grid">
+        <div class="convo-card">
+            <div class="convo-header">
+                <div>
+                    <span class="convo-user">🎨 Comic Generator</span>
+                    <span class="channel-badge active">IN PROGRESS</span>
+                </div>
+                <span class="convo-time">Building Now</span>
+            </div>
+            <div class="convo-messages">
+                <div class="message">
+                    <div class="msg-role bot">Status</div>
+                    <div class="msg-text">Ronnie is building a comic book generator using Kie AI's Nano Banana image generation. Will create comic panels from story descriptions.
+
+Location: /forge-team/comic-generator</div>
+                </div>
+            </div>
+        </div>
+
         <div class="convo-card">
             <div class="convo-header">
                 <div>
                     <span class="convo-user">import-viewport-fix</span>
                     <span class="channel-badge telegram">Subagent</span>
                 </div>
-                <span class="convo-time">Just Now ✅</span>
+                <span class="convo-time">Completed ✅</span>
             </div>
             <div class="convo-messages">
                 <div class="message">
                     <div class="msg-role bot">Result</div>
-                    <div class="msg-text">Fixed import page to fit 100dvh without scrolling. Responsive spacing throughout, smaller elements on mobile. All steps responsive. Commit c32fd77.</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="convo-card">
-            <div class="convo-header">
-                <div>
-                    <span class="convo-user">import-page-variants</span>
-                    <span class="channel-badge telegram">Subagent</span>
-                </div>
-                <span class="convo-time">Completed</span>
-            </div>
-            <div class="convo-messages">
-                <div class="message">
-                    <div class="msg-role bot">Result</div>
-                    <div class="msg-text">Created 2 alternative import pages: page-wizard.tsx (step-by-step wizard) and page-chat.tsx (conversational onboarding with AI chat bubbles).</div>
+                    <div class="msg-text">Fixed import page to fit 100dvh without scrolling. Responsive spacing throughout, smaller elements on mobile. Commit c32fd77.</div>
                 </div>
             </div>
         </div>
@@ -302,7 +308,7 @@ What I can do:
                     <span class="convo-user">chat-ui-improvements</span>
                     <span class="channel-badge telegram">Subagent</span>
                 </div>
-                <span class="convo-time">Completed</span>
+                <span class="convo-time">Completed ✅</span>
             </div>
             <div class="convo-messages">
                 <div class="message">
@@ -318,7 +324,7 @@ What I can do:
                     <span class="convo-user">halftone-cursor-bg</span>
                     <span class="channel-badge telegram">Subagent</span>
                 </div>
-                <span class="convo-time">Completed</span>
+                <span class="convo-time">Completed ✅</span>
             </div>
             <div class="convo-messages">
                 <div class="message">
@@ -330,7 +336,7 @@ What I can do:
     </div>
 
     <div class="update-info">
-        Last updated: Jan 29, 2026 6:10 AM CST • Updates every heartbeat
+        Last updated: Jan 29, 2026 6:45 AM CST • Updates every heartbeat
     </div>
 </body>
 </html>
