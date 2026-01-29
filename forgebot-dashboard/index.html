@@ -49,258 +49,169 @@
             padding: 20px;
             text-align: center;
         }
-        .stat-num { font-size: 2.5rem; font-weight: 700; color: #EA580C; }
-        .stat-label { color: #888; margin-top: 5px; font-size: 0.9rem; }
-        .section-title {
-            font-size: 1.2rem;
-            color: #EA580C;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #222;
-        }
-        .convos-grid {
+        .stat-value { font-size: 2.5rem; font-weight: 700; color: #EA580C; }
+        .stat-label { color: #888; font-size: 0.9rem; margin-top: 5px; }
+        .sessions-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 20px;
         }
-        .convo-card {
+        .session-card {
             background: #111;
             border: 1px solid #222;
             border-radius: 12px;
-            overflow: hidden;
+            padding: 20px;
+            transition: border-color 0.2s;
         }
-        .convo-header {
-            background: #1a1a1a;
-            padding: 15px 20px;
+        .session-card:hover { border-color: #EA580C; }
+        .session-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #222;
+            margin-bottom: 15px;
         }
-        .convo-user { font-weight: 600; font-size: 1.1rem; }
-        .convo-channel { 
-            background: #EA580C; 
-            color: #000; 
-            padding: 3px 10px; 
-            border-radius: 10px; 
-            font-size: 0.75rem; 
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        .convo-channel.slack { background: #4A154B; color: #fff; }
-        .convo-channel.telegram { background: #0088cc; color: #fff; }
-        .convo-time { color: #666; font-size: 0.8rem; margin-top: 5px; }
-        .convo-messages {
-            padding: 15px 20px;
-            max-height: 250px;
-            overflow-y: auto;
-        }
-        .message { padding: 10px 0; border-bottom: 1px solid #1a1a1a; }
-        .message:last-child { border-bottom: none; }
-        .msg-role {
+        .session-name { font-weight: 600; font-size: 1.1rem; }
+        .session-channel {
+            background: #222;
+            padding: 4px 10px;
+            border-radius: 12px;
             font-size: 0.75rem;
             text-transform: uppercase;
-            color: #666;
-            margin-bottom: 5px;
         }
-        .msg-role.assistant { color: #EA580C; }
-        .msg-content { 
-            color: #ccc; 
-            line-height: 1.5;
-            font-size: 0.9rem;
-            white-space: pre-wrap;
-        }
-        .subagent-badge {
-            background: #7c3aed;
-            color: #fff;
-            padding: 2px 8px;
+        .session-channel.slack { background: #4A154B; }
+        .session-channel.telegram { background: #0088cc; }
+        .session-channel.webchat { background: #333; }
+        .session-message {
+            background: #0a0a0a;
             border-radius: 8px;
-            font-size: 0.7rem;
-            margin-left: 10px;
+            padding: 12px;
+            font-size: 0.9rem;
+            color: #ccc;
+            margin-top: 10px;
+            max-height: 100px;
+            overflow: hidden;
         }
+        .session-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 10px;
+        }
+        .no-sessions {
+            text-align: center;
+            padding: 60px;
+            color: #666;
+        }
+        h2 { margin-bottom: 20px; color: #888; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
     </style>
 </head>
 <body>
     <div class="header">
         <div>
             <h1>🤖 ForgeBot Dashboard</h1>
-            <div class="updated">Last updated: Jan 29, 2026 — 9:10 AM CST</div>
+            <div class="updated">Last updated: Jan 29, 2026 09:25 CST</div>
         </div>
         <div class="live-badge">● LIVE</div>
     </div>
 
     <div class="stats-row">
         <div class="stat-card">
-            <div class="stat-num">8</div>
+            <div class="stat-value">8</div>
             <div class="stat-label">Active Sessions</div>
         </div>
         <div class="stat-card">
-            <div class="stat-num">6</div>
+            <div class="stat-value">5</div>
             <div class="stat-label">Slack Channels</div>
         </div>
         <div class="stat-card">
-            <div class="stat-num">1</div>
-            <div class="stat-label">Sub-Agents Running</div>
+            <div class="stat-value">0</div>
+            <div class="stat-label">Pending Requests</div>
         </div>
         <div class="stat-card">
-            <div class="stat-num">$0.42</div>
-            <div class="stat-label">Est. Cost (Last Hour)</div>
+            <div class="stat-value">✓</div>
+            <div class="stat-label">All Systems OK</div>
         </div>
     </div>
 
-    <h2 class="section-title">📊 Recent Activity</h2>
-    
-    <div class="convos-grid">
-        <!-- Main Session -->
-        <div class="convo-card">
-            <div class="convo-header">
-                <div>
-                    <span class="convo-user">🏠 Main Session (Drew)</span>
-                    <span class="convo-channel telegram">Telegram</span>
-                </div>
+    <h2>Recent Team Activity</h2>
+    <div class="sessions-grid">
+        <div class="session-card">
+            <div class="session-header">
+                <span class="session-name">🔧 SoulPrint Monitor</span>
+                <span class="session-channel telegram">telegram</span>
             </div>
-            <div class="convo-messages">
-                <div class="message">
-                    <div class="msg-role assistant">Assistant</div>
-                    <div class="msg-content">Heartbeat check: Verifying pairing requests and updating dashboard...</div>
-                </div>
+            <div class="session-message">Build Status: PASSING ✅<br>Lint warnings: 28 → 19<br>Latest: Clean up unused variables</div>
+            <div class="session-meta">
+                <span>Sub-agent</span>
+                <span>Active now</span>
             </div>
-            <div class="convo-time" style="padding: 10px 20px;">Updated just now • 17K tokens</div>
         </div>
 
-        <!-- Deep Search Toggle Sub-Agent -->
-        <div class="convo-card">
-            <div class="convo-header">
-                <div>
-                    <span class="convo-user">deep-search-toggle</span>
-                    <span class="subagent-badge">SUB-AGENT</span>
-                    <span style="background:#22c55e;color:#000;padding:2px 8px;border-radius:8px;font-size:0.7rem;margin-left:5px;">✓ DONE</span>
-                </div>
+        <div class="session-card">
+            <div class="session-header">
+                <span class="session-name">📢 General Channel</span>
+                <span class="session-channel slack">slack</span>
             </div>
-            <div class="convo-messages">
-                <div class="message">
-                    <div class="msg-role assistant">Assistant</div>
-                    <div class="msg-content">✅ Deep Search toggle for SoulPrint users
-• 🔍 button next to chat input
-• Uses Perplexity sonar-deep-research
-• Shows sources/citations in response
-• Build passes, pushed to main</div>
-                </div>
+            <div class="session-message">Perplexity smart detection update pushed to Reggie</div>
+            <div class="session-meta">
+                <span>D0ABNHJ0TGC</span>
+                <span>30 min ago</span>
             </div>
-            <div class="convo-time" style="padding: 10px 20px;">53 min ago • 54K tokens</div>
         </div>
 
-        <!-- Slack: #general -->
-        <div class="convo-card">
-            <div class="convo-header">
-                <div>
-                    <span class="convo-user">#general</span>
-                    <span class="convo-channel slack">Slack</span>
-                </div>
+        <div class="session-card">
+            <div class="session-header">
+                <span class="session-name">👤 Ben (DM)</span>
+                <span class="session-channel slack">slack</span>
             </div>
-            <div class="convo-messages">
-                <div class="message">
-                    <div class="msg-role assistant">Assistant</div>
-                    <div class="msg-content">Cross-session coordination completed. Quiet channel.</div>
-                </div>
+            <div class="session-message">SoulPrint update delivered</div>
+            <div class="session-meta">
+                <span>U09SQBT68RL</span>
+                <span>1.5 hrs ago</span>
             </div>
-            <div class="convo-time" style="padding: 10px 20px;">Just now • 19K tokens</div>
         </div>
 
-        <!-- Slack: Ben DM -->
-        <div class="convo-card">
-            <div class="convo-header">
-                <div>
-                    <span class="convo-user">Ben (DM)</span>
-                    <span class="convo-channel slack">Slack</span>
-                </div>
+        <div class="session-card">
+            <div class="session-header">
+                <span class="session-name">👤 Ronnie (DM)</span>
+                <span class="session-channel slack">slack</span>
             </div>
-            <div class="convo-messages">
-                <div class="message">
-                    <div class="msg-role assistant">Assistant</div>
-                    <div class="msg-content">Agent coordination complete.</div>
-                </div>
+            <div class="session-message">Assignment delivered - excuse ready ✅</div>
+            <div class="session-meta">
+                <span>D0ABJV580KU</span>
+                <span>2 hrs ago</span>
             </div>
-            <div class="convo-time" style="padding: 10px 20px;">1 hr ago • 17K tokens</div>
         </div>
 
-        <!-- Slack: Ronnie DM -->
-        <div class="convo-card">
-            <div class="convo-header">
-                <div>
-                    <span class="convo-user">Ronnie (DM)</span>
-                    <span class="convo-channel slack">Slack</span>
-                </div>
+        <div class="session-card">
+            <div class="session-header">
+                <span class="session-name">👤 Drew (DM)</span>
+                <span class="session-channel slack">slack</span>
             </div>
-            <div class="convo-messages">
-                <div class="message">
-                    <div class="msg-role assistant">Assistant</div>
-                    <div class="msg-content">Got Drew's assignment — excuse note ready! 👍</div>
-                </div>
+            <div class="session-message">Working on SoulPrint + hero headline bump</div>
+            <div class="session-meta">
+                <span>D0ABXT09F3K</span>
+                <span>3 hrs ago</span>
             </div>
-            <div class="convo-time" style="padding: 10px 20px;">2 hrs ago • 26K tokens</div>
         </div>
 
-        <!-- Slack: Drew DM -->
-        <div class="convo-card">
-            <div class="convo-header">
-                <div>
-                    <span class="convo-user">Drew (DM)</span>
-                    <span class="convo-channel slack">Slack</span>
-                </div>
+        <div class="session-card">
+            <div class="session-header">
+                <span class="session-name">👤 Reggie (DM)</span>
+                <span class="session-channel slack">slack</span>
             </div>
-            <div class="convo-messages">
-                <div class="message">
-                    <div class="msg-role assistant">Assistant</div>
-                    <div class="msg-content">Hey Drew! 👋 Working on SoulPrint stuff with you on Telegram right now — hero headline bump and sub-agents running. What's up?</div>
-                </div>
+            <div class="session-message">ForgeBot intro + SoulPrint collaboration</div>
+            <div class="session-meta">
+                <span>U0A87V5BN9M</span>
+                <span>18 hrs ago</span>
             </div>
-            <div class="convo-time" style="padding: 10px 20px;">3 hrs ago</div>
-        </div>
-
-        <!-- Slack: Reggie DM -->
-        <div class="convo-card">
-            <div class="convo-header">
-                <div>
-                    <span class="convo-user">Reggie (DM)</span>
-                    <span class="convo-channel slack">Slack</span>
-                </div>
-            </div>
-            <div class="convo-messages">
-                <div class="message">
-                    <div class="msg-role assistant">Assistant</div>
-                    <div class="msg-content">Hey Reggie! 👋 Drew wanted me to reach out — building SoulPrint together. Ready to help with code, architecture, whatever you need!</div>
-                </div>
-            </div>
-            <div class="convo-time" style="padding: 10px 20px;">18 hrs ago</div>
-        </div>
-
-        <!-- Slack: Ronnie 2 -->
-        <div class="convo-card">
-            <div class="convo-header">
-                <div>
-                    <span class="convo-user">Ronnie (Older DM)</span>
-                    <span class="convo-channel slack">Slack</span>
-                </div>
-            </div>
-            <div class="convo-messages">
-                <div class="message">
-                    <div class="msg-role assistant">Assistant</div>
-                    <div class="msg-content">Hey Ronnie! 👋 Drew says: "You are amazing in every way." 💛</div>
-                </div>
-            </div>
-            <div class="convo-time" style="padding: 10px 20px;">19 hrs ago</div>
         </div>
     </div>
 
-    <div style="margin-top: 40px; padding: 20px; background: #111; border-radius: 12px; border: 1px solid #222;">
-        <h3 style="color: #EA580C; margin-bottom: 15px;">🔧 System Status</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-            <div>✅ Slack Connected</div>
-            <div>✅ Telegram Connected</div>
-            <div>✅ No Pending Pairing Requests</div>
-            <div>✅ All Systems Healthy</div>
-        </div>
-    </div>
+    <script>
+        // Auto-refresh every 5 minutes
+        setTimeout(() => location.reload(), 300000);
+    </script>
 </body>
 </html>
