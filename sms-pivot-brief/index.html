@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoulPrint: The SMS Pivot</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #e5e5e5;
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            font-size: 1.4rem;
+            color: #EA580C;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #222;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #EA580C;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+        strong {
+            color: #fff;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(234, 88, 12, 0.1), rgba(234, 88, 12, 0.05));
+            border: 1px solid rgba(234, 88, 12, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        .highlight-box p {
+            font-size: 1.2rem;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+        }
+        .architecture {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            white-space: pre;
+            color: #888;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #222;
+        }
+        th {
+            background: #111;
+            color: #EA580C;
+            font-weight: 600;
+        }
+        td {
+            color: #ccc;
+        }
+        .status-done {
+            color: #22c55e;
+        }
+        .status-pending {
+            color: #EA580C;
+        }
+        .quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #EA580C;
+            text-align: center;
+            margin: 50px 0;
+            padding: 30px;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: #EA580C;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🧠</div>
+        <h1>SoulPrint: The SMS Pivot</h1>
+        <p class="tagline">"Your best friend lives in your messages."</p>
+        
+        <div class="meta">
+            <strong>For:</strong> Ben &nbsp;|&nbsp; <strong>From:</strong> Drew &nbsp;|&nbsp; <strong>Date:</strong> January 29, 2026
+        </div>
+
+        <h2>The Big Idea</h2>
+        <p>We're pivoting SoulPrint from a web-only chat app to an <strong>SMS-first AI companion</strong>. Users will text a phone number, save it as a contact, and interact with their AI like they would a real friend — right alongside their other conversations.</p>
+
+        <div class="highlight-box">
+            <p>Your best friend lives in your messages. Now your AI can too.</p>
+        </div>
+
+        <h2>Why SMS?</h2>
+        <ol>
+            <li><strong>Intimacy</strong> — Text messages feel personal. That's where your real friends are.</li>
+            <li><strong>Zero friction</strong> — No app download, no login every time. Just text.</li>
+            <li><strong>Always available</strong> — Works on any phone, any carrier, even without internet (for basic texts).</li>
+            <li><strong>The mission</strong> — SoulPrint is about <em>identity</em>. Your AI should feel like an extension of you, not another app icon.</li>
+        </ol>
+
+        <h2>What It Can Do</h2>
+        <p>Everything ForgeBot can do, but through text:</p>
+        <ul>
+            <li><strong>Chat & remember</strong> — Long-term memory powered by our RLM (Retrieval-augmented Long-term Memory)</li>
+            <li><strong>Generate images</strong> — "Send me a photo of a sunset over Chicago"</li>
+            <li><strong>Create videos</strong> — Short clips, AI-generated content</li>
+            <li><strong>Build websites</strong> — Text your idea → get a live URL → refine via text</li>
+            <li><strong>Research</strong> — Web search, news, current events (Perplexity integration)</li>
+            <li><strong>Send emails</strong> — Draft and send on your behalf</li>
+            <li><strong>Know you</strong> — Import your ChatGPT history so it already understands you</li>
+        </ul>
+
+        <h2>The Architecture</h2>
+        <div class="architecture">┌─────────────────────────────────────────────────────┐
+│                    USER'S PHONE                      │
+│              (SMS / iMessage contact)                │
+└─────────────────┬───────────────────────────────────┘
+                  │ Text messages
+                  ▼
+┌─────────────────────────────────────────────────────┐
+│              SMS GATEWAY (Twilio/etc)                │
+└─────────────────┬───────────────────────────────────┘
+                  │
+                  ▼
+┌─────────────────────────────────────────────────────┐
+│              SOULPRINT ENGINE                        │
+│  ┌───────────────────────────────────────────────┐  │
+│  │  • AI Core (Claude/GPT)                       │  │
+│  │  • RLM Memory System                          │  │
+│  │  • Tool Suite (images, video, web, email)     │  │
+│  │  • Website Builder                            │  │
+│  │  • User Identity Profile                      │  │
+│  └───────────────────────────────────────────────┘  │
+└─────────────────┬───────────────────────────────────┘
+                  │
+                  ▼
+┌─────────────────────────────────────────────────────┐
+│           SOULPRINTENGINE.AI (Dashboard)             │
+│  • View conversation history                         │
+│  • Manage memory & preferences                       │
+│  • See websites you've built                         │
+│  • Import ChatGPT data                               │
+│  • Upgrade/billing                                   │
+└─────────────────────────────────────────────────────┘</div>
+
+        <h2>What We Already Have</h2>
+        <table>
+            <tr>
+                <th>Component</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>AI chat with memory (RLM)</td>
+                <td class="status-done">✅ Built</td>
+            </tr>
+            <tr>
+                <td>ChatGPT import</td>
+                <td class="status-done">✅ Built</td>
+            </tr>
+            <tr>
+                <td>User profiles & auth</td>
+                <td class="status-done">✅ Built</td>
+            </tr>
+            <tr>
+                <td>Image generation</td>
+                <td class="status-done">✅ Ready (Kie AI)</td>
+            </tr>
+            <tr>
+                <td>Video generation</td>
+                <td class="status-done">✅ Ready (Veo3)</td>
+            </tr>
+            <tr>
+                <td>Website builder</td>
+                <td class="status-done">✅ Ready (ForgeBot)</td>
+            </tr>
+            <tr>
+                <td>Web research</td>
+                <td class="status-done">✅ Built (Perplexity)</td>
+            </tr>
+            <tr>
+                <td>Dashboard UI</td>
+                <td class="status-done">✅ Built</td>
+            </tr>
+            <tr>
+                <td>SMS integration</td>
+                <td class="status-pending">🔲 Next step</td>
+            </tr>
+        </table>
+
+        <h2>What We Need to Build</h2>
+        <ol>
+            <li><strong>SMS Gateway Integration</strong> — Twilio or similar for inbound/outbound messaging</li>
+            <li><strong>Phone Number Provisioning</strong> — Shared number with user ID or dedicated numbers</li>
+            <li><strong>Media Handling</strong> — MMS for images/videos, links for larger content</li>
+            <li><strong>Session Management</strong> — Map phone numbers to user accounts</li>
+        </ol>
+
+        <h2>The User Journey</h2>
+        <ol>
+            <li><strong>Sign up</strong> at soulprintengine.ai</li>
+            <li><strong>Import</strong> ChatGPT history (optional but powerful)</li>
+            <li><strong>Get your number</strong> — save it as "SoulPrint" or give it a name</li>
+            <li><strong>Text your AI</strong> — it knows you, it can do things for you</li>
+            <li><strong>Dashboard</strong> — check in at the website to see history, built sites, memory</li>
+        </ol>
+
+        <h2>Why This Works</h2>
+        <ul>
+            <li><strong>ForgeBot proved it</strong> — Drew uses this exact setup daily. It works.</li>
+            <li><strong>Memory makes it personal</strong> — Not a generic chatbot, it's <em>your</em> AI</li>
+            <li><strong>Tools make it useful</strong> — Not just chat, it actually does things</li>
+            <li><strong>SMS makes it intimate</strong> — Your AI is a contact, not an app</li>
+        </ul>
+
+        <h2>Next Steps</h2>
+        <ol>
+            <li>Set up Twilio (or evaluate alternatives)</li>
+            <li>Build SMS webhook → SoulPrint engine routing</li>
+            <li>Test with Drew's number first</li>
+            <li>Design onboarding flow for new SMS users</li>
+            <li>Launch beta to small group</li>
+        </ol>
+
+        <p class="quote">"Your best friend lives in your messages. Now your AI can too."</p>
+    </div>
+</body>
+</html>
