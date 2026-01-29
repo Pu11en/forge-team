@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoulPrint Import - Variant Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    .animate-pulse { animation: pulse 2s infinite; }
+  </style>
+</head>
+<body class="bg-black min-h-screen">
+
+  <!-- VARIANT SELECTOR -->
+  <div class="fixed top-4 right-4 z-50 flex gap-2">
+    <button onclick="showVariant('wizard')" class="px-4 py-2 bg-orange-500 text-black rounded-lg font-semibold text-sm hover:bg-orange-400">Wizard</button>
+    <button onclick="showVariant('chat')" class="px-4 py-2 bg-white/10 text-white rounded-lg font-semibold text-sm hover:bg-white/20">Chat</button>
+    <button onclick="showVariant('minimal')" class="px-4 py-2 bg-white/10 text-white rounded-lg font-semibold text-sm hover:bg-white/20">Minimal</button>
+  </div>
+
+  <!-- WIZARD VARIANT -->
+  <div id="wizard" class="variant min-h-screen flex flex-col">
+    <header class="px-6 py-5 border-b border-white/5">
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 bg-orange-500 rounded-lg"></div>
+        <span class="text-white font-semibold">SoulPrint</span>
+      </div>
+    </header>
+    
+    <div class="flex-1 flex flex-col items-center justify-center px-6">
+      <!-- Progress Steps -->
+      <div class="flex items-center gap-4 mb-12">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center text-black font-bold text-sm">1</div>
+          <span class="text-white text-sm font-medium">Export</span>
+        </div>
+        <div class="w-12 h-0.5 bg-white/20"></div>
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center text-black font-bold text-sm">2</div>
+          <span class="text-white text-sm font-medium">Upload</span>
+        </div>
+        <div class="w-12 h-0.5 bg-white/20"></div>
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/50 font-bold text-sm">3</div>
+          <span class="text-white/50 text-sm">Chat</span>
+        </div>
+      </div>
+
+      <div class="max-w-md w-full text-center">
+        <h1 class="text-3xl font-bold text-white mb-3">Step 2: Upload Your Data</h1>
+        <p class="text-white/50 mb-8">Drop your ChatGPT export ZIP file below</p>
+        
+        <div class="border-2 border-dashed border-white/20 rounded-2xl p-12 hover:border-orange-500/50 transition-colors cursor-pointer">
+          <svg class="w-12 h-12 mx-auto mb-4 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+          </svg>
+          <p class="text-white font-medium">Drop ZIP here</p>
+          <p class="text-white/40 text-sm mt-1">or click to browse</p>
+        </div>
+
+        <button class="mt-6 text-white/40 text-sm hover:text-white/60">← Back to export instructions</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAT VARIANT -->
+  <div id="chat" class="variant min-h-screen flex flex-col hidden">
+    <header class="px-6 py-5">
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 bg-orange-500 rounded-lg"></div>
+        <span class="text-white font-semibold">SoulPrint</span>
+      </div>
+    </header>
+
+    <div class="flex-1 flex flex-col max-w-lg mx-auto px-6 py-8">
+      <!-- Chat Messages -->
+      <div class="space-y-4 flex-1">
+        <!-- AI Message -->
+        <div class="flex gap-3">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex-shrink-0"></div>
+          <div class="bg-white/5 rounded-2xl rounded-tl-sm px-4 py-3 max-w-[80%]">
+            <p class="text-white">Hey! 👋 I'm excited to meet you.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-3">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex-shrink-0"></div>
+          <div class="bg-white/5 rounded-2xl rounded-tl-sm px-4 py-3 max-w-[80%]">
+            <p class="text-white">To really get to know you, I need to see how you think. Got a ChatGPT export?</p>
+          </div>
+        </div>
+
+        <!-- Upload Card -->
+        <div class="flex gap-3 mt-4">
+          <div class="w-8 h-8 flex-shrink-0"></div>
+          <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-6 flex-1">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-orange-500/20 flex items-center justify-center">
+                <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <p class="text-white font-medium">Upload ChatGPT Export</p>
+                <p class="text-white/40 text-sm">ZIP file from OpenAI</p>
+              </div>
+              <button class="px-4 py-2 bg-orange-500 text-black rounded-lg font-semibold text-sm">Upload</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-3 mt-2">
+          <div class="w-8 h-8 flex-shrink-0"></div>
+          <button class="text-white/40 text-sm hover:text-white/60">I don't have one →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MINIMAL VARIANT -->
+  <div id="minimal" class="variant min-h-screen flex flex-col items-center justify-center px-6 hidden">
+    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-600/10 flex items-center justify-center mb-8 border border-orange-500/20">
+      <svg class="w-10 h-10 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+      </svg>
+    </div>
+    
+    <h1 class="text-3xl font-bold text-white mb-3 text-center">Let's get to know you</h1>
+    <p class="text-white/50 text-center max-w-sm mb-10">Upload your ChatGPT export and we'll create your personalized AI.</p>
+    
+    <div class="w-full max-w-sm border-2 border-dashed border-white/10 rounded-2xl p-10 text-center hover:border-orange-500/50 transition-all cursor-pointer group">
+      <svg class="w-8 h-8 mx-auto mb-3 text-white/30 group-hover:text-orange-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+      </svg>
+      <p class="text-white/70 font-medium">Drop ZIP or click to browse</p>
+    </div>
+
+    <p class="mt-8 text-white/30 text-xs">100% private — processed in your browser</p>
+  </div>
+
+  <script>
+    function showVariant(name) {
+      document.querySelectorAll('.variant').forEach(v => v.classList.add('hidden'));
+      document.getElementById(name).classList.remove('hidden');
+      document.querySelectorAll('button').forEach(b => {
+        b.classList.remove('bg-orange-500', 'text-black');
+        b.classList.add('bg-white/10', 'text-white');
+      });
+      event.target.classList.remove('bg-white/10', 'text-white');
+      event.target.classList.add('bg-orange-500', 'text-black');
+    }
+  </script>
+</body>
+</html>
