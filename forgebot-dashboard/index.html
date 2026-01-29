@@ -124,26 +124,26 @@
     <div class="header">
         <div>
             <h1>🤖 ForgeBot Dashboard</h1>
-            <div class="updated">Last updated: Jan 29, 2026 — 9:00 AM CST</div>
+            <div class="updated">Last updated: Jan 29, 2026 — 9:10 AM CST</div>
         </div>
         <div class="live-badge">● LIVE</div>
     </div>
 
     <div class="stats-row">
         <div class="stat-card">
-            <div class="stat-num">10</div>
+            <div class="stat-num">8</div>
             <div class="stat-label">Active Sessions</div>
         </div>
         <div class="stat-card">
-            <div class="stat-num">3</div>
+            <div class="stat-num">6</div>
             <div class="stat-label">Slack Channels</div>
         </div>
         <div class="stat-card">
-            <div class="stat-num">7</div>
-            <div class="stat-label">Sub-Agents Completed</div>
+            <div class="stat-num">1</div>
+            <div class="stat-label">Sub-Agents Running</div>
         </div>
         <div class="stat-card">
-            <div class="stat-num">$0.35</div>
+            <div class="stat-num">$0.42</div>
             <div class="stat-label">Est. Cost (Last Hour)</div>
         </div>
     </div>
@@ -162,10 +162,10 @@
             <div class="convo-messages">
                 <div class="message">
                     <div class="msg-role assistant">Assistant</div>
-                    <div class="msg-content">Checking pairing requests and updating dashboard...</div>
+                    <div class="msg-content">Heartbeat check: Verifying pairing requests and updating dashboard...</div>
                 </div>
             </div>
-            <div class="convo-time" style="padding: 10px 20px;">Updated just now • 22K tokens</div>
+            <div class="convo-time" style="padding: 10px 20px;">Updated just now • 17K tokens</div>
         </div>
 
         <!-- Deep Search Toggle Sub-Agent -->
@@ -183,111 +183,48 @@
                     <div class="msg-content">✅ Deep Search toggle for SoulPrint users
 • 🔍 button next to chat input
 • Uses Perplexity sonar-deep-research
-• Shows sources/citations in response</div>
+• Shows sources/citations in response
+• Build passes, pushed to main</div>
                 </div>
             </div>
-            <div class="convo-time" style="padding: 10px 20px;">Just completed • 54K tokens</div>
+            <div class="convo-time" style="padding: 10px 20px;">53 min ago • 54K tokens</div>
         </div>
 
-        <!-- Chat Branding Sub-Agent -->
+        <!-- Slack: #general -->
         <div class="convo-card">
             <div class="convo-header">
                 <div>
-                    <span class="convo-user">soulprint-chat-branding</span>
-                    <span class="subagent-badge">SUB-AGENT</span>
-                    <span style="background:#22c55e;color:#000;padding:2px 8px;border-radius:8px;font-size:0.7rem;margin-left:5px;">✓ DONE</span>
+                    <span class="convo-user">#general</span>
+                    <span class="convo-channel slack">Slack</span>
                 </div>
             </div>
             <div class="convo-messages">
                 <div class="message">
                     <div class="msg-role assistant">Assistant</div>
-                    <div class="msg-content">✅ Chat UI branded with SoulPrint colors
-• Orange #EA580C accents
-• Dark theme: #0a0a0a backgrounds
-• User bubbles, AI avatar, inputs updated</div>
+                    <div class="msg-content">Cross-session coordination completed. Quiet channel.</div>
                 </div>
             </div>
-            <div class="convo-time" style="padding: 10px 20px;">Completed • 43K tokens</div>
+            <div class="convo-time" style="padding: 10px 20px;">Just now • 19K tokens</div>
         </div>
 
-        <!-- Referral UI Polish Sub-Agent -->
+        <!-- Slack: Ben DM -->
         <div class="convo-card">
             <div class="convo-header">
                 <div>
-                    <span class="convo-user">referral-ui-polish</span>
-                    <span class="subagent-badge">SUB-AGENT</span>
-                    <span style="background:#22c55e;color:#000;padding:2px 8px;border-radius:8px;font-size:0.7rem;margin-left:5px;">✓ DONE</span>
+                    <span class="convo-user">Ben (DM)</span>
+                    <span class="convo-channel slack">Slack</span>
                 </div>
             </div>
             <div class="convo-messages">
                 <div class="message">
                     <div class="msg-role assistant">Assistant</div>
-                    <div class="msg-content">✅ Polished referral UI on signup modal
-• "🎟️ Invited by [Name]" badge
-• Collapsible "Have a code?" expander
-• Live validation with feedback</div>
+                    <div class="msg-content">Agent coordination complete.</div>
                 </div>
             </div>
-            <div class="convo-time" style="padding: 10px 20px;">Completed • 41K tokens</div>
+            <div class="convo-time" style="padding: 10px 20px;">1 hr ago • 17K tokens</div>
         </div>
 
-        <!-- Senior Dev Review Sub-Agent -->
-        <div class="convo-card">
-            <div class="convo-header">
-                <div>
-                    <span class="convo-user">senior-dev-review</span>
-                    <span class="subagent-badge">SUB-AGENT</span>
-                </div>
-            </div>
-            <div class="convo-messages">
-                <div class="message">
-                    <div class="msg-role assistant">Assistant</div>
-                    <div class="msg-content">Build successful! Pushing changes to main branch...</div>
-                </div>
-            </div>
-            <div class="convo-time" style="padding: 10px 20px;">12 min ago • 97K tokens</div>
-        </div>
-
-        <!-- Referral Dashboard Sub-Agent -->
-        <div class="convo-card">
-            <div class="convo-header">
-                <div>
-                    <span class="convo-user">referral-dashboard</span>
-                    <span class="subagent-badge">SUB-AGENT</span>
-                </div>
-            </div>
-            <div class="convo-messages">
-                <div class="message">
-                    <div class="msg-role assistant">Assistant</div>
-                    <div class="msg-content">✅ Referral Analytics Dashboard Complete
-
-• Database schema with team codes
-• Signup flow updates with referral tracking
-• Admin dashboard at /admin/referrals</div>
-                </div>
-            </div>
-            <div class="convo-time" style="padding: 10px 20px;">5 min ago • 41K tokens</div>
-        </div>
-
-        <!-- Perplexity Sub-Agent -->
-        <div class="convo-card">
-            <div class="convo-header">
-                <div>
-                    <span class="convo-user">soulprint-perplexity</span>
-                    <span class="subagent-badge">SUB-AGENT</span>
-                </div>
-            </div>
-            <div class="convo-messages">
-                <div class="message">
-                    <div class="msg-role assistant">Assistant</div>
-                    <div class="msg-content">Done. Perplexity integration added to SoulPrint chat.
-Commit: 4d69904 - Pushed to main</div>
-                </div>
-            </div>
-            <div class="convo-time" style="padding: 10px 20px;">8 min ago • 25K tokens</div>
-        </div>
-
-        <!-- Slack: Ronnie -->
+        <!-- Slack: Ronnie DM -->
         <div class="convo-card">
             <div class="convo-header">
                 <div>
@@ -298,65 +235,61 @@ Commit: 4d69904 - Pushed to main</div>
             <div class="convo-messages">
                 <div class="message">
                     <div class="msg-role assistant">Assistant</div>
-                    <div class="msg-content">ANNOUNCE_SKIP</div>
+                    <div class="msg-content">Got Drew's assignment — excuse note ready! 👍</div>
                 </div>
             </div>
-            <div class="convo-time" style="padding: 10px 20px;">3 min ago • 26K tokens</div>
+            <div class="convo-time" style="padding: 10px 20px;">2 hrs ago • 26K tokens</div>
         </div>
 
-        <!-- Slack: Glenn -->
+        <!-- Slack: Drew DM -->
         <div class="convo-card">
             <div class="convo-header">
                 <div>
-                    <span class="convo-user">Glenn (DM)</span>
+                    <span class="convo-user">Drew (DM)</span>
                     <span class="convo-channel slack">Slack</span>
                 </div>
             </div>
             <div class="convo-messages">
                 <div class="message">
                     <div class="msg-role assistant">Assistant</div>
-                    <div class="msg-content">Hey Glenn! 👋 Quick heads up — to use ForgeBot, just DM me directly!</div>
+                    <div class="msg-content">Hey Drew! 👋 Working on SoulPrint stuff with you on Telegram right now — hero headline bump and sub-agents running. What's up?</div>
                 </div>
             </div>
-            <div class="convo-time" style="padding: 10px 20px;">16 hrs ago</div>
+            <div class="convo-time" style="padding: 10px 20px;">3 hrs ago</div>
         </div>
 
-        <!-- Safe Area Audit -->
+        <!-- Slack: Reggie DM -->
         <div class="convo-card">
             <div class="convo-header">
                 <div>
-                    <span class="convo-user">safe-area-audit</span>
-                    <span class="subagent-badge">SUB-AGENT</span>
+                    <span class="convo-user">Reggie (DM)</span>
+                    <span class="convo-channel slack">Slack</span>
                 </div>
             </div>
             <div class="convo-messages">
                 <div class="message">
                     <div class="msg-role assistant">Assistant</div>
-                    <div class="msg-content">✅ Safe-Area Audit Complete
-All files checked, fix applied to import page.
-Commit: 5e13fea</div>
+                    <div class="msg-content">Hey Reggie! 👋 Drew wanted me to reach out — building SoulPrint together. Ready to help with code, architecture, whatever you need!</div>
                 </div>
             </div>
-            <div class="convo-time" style="padding: 10px 20px;">10 min ago • 47K tokens</div>
+            <div class="convo-time" style="padding: 10px 20px;">18 hrs ago</div>
         </div>
 
-        <!-- Realtime Tasks -->
+        <!-- Slack: Ronnie 2 -->
         <div class="convo-card">
             <div class="convo-header">
                 <div>
-                    <span class="convo-user">realtime-tasks</span>
-                    <span class="subagent-badge">SUB-AGENT</span>
+                    <span class="convo-user">Ronnie (Older DM)</span>
+                    <span class="convo-channel slack">Slack</span>
                 </div>
             </div>
             <div class="convo-messages">
                 <div class="message">
                     <div class="msg-role assistant">Assistant</div>
-                    <div class="msg-content">Done! Perplexity Sonar is now primary for news/research.
-Tavily remains as fallback.
-Commit: b449c92</div>
+                    <div class="msg-content">Hey Ronnie! 👋 Drew says: "You are amazing in every way." 💛</div>
                 </div>
             </div>
-            <div class="convo-time" style="padding: 10px 20px;">11 min ago • 22K tokens</div>
+            <div class="convo-time" style="padding: 10px 20px;">19 hrs ago</div>
         </div>
     </div>
 
@@ -366,7 +299,7 @@ Commit: b449c92</div>
             <div>✅ Slack Connected</div>
             <div>✅ Telegram Connected</div>
             <div>✅ No Pending Pairing Requests</div>
-            <div>✅ Sub-Agents Healthy</div>
+            <div>✅ All Systems Healthy</div>
         </div>
     </div>
 </body>
