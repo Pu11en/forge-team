@@ -35,6 +35,7 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0.7; }
         }
+        .updated { color: #666; font-size: 0.85rem; margin-top: 5px; }
         .stats-row {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -76,23 +77,25 @@
             align-items: center;
             border-bottom: 1px solid #222;
         }
-        .convo-user {
+        .convo-user { font-weight: 600; font-size: 1.1rem; }
+        .convo-channel { 
+            background: #EA580C; 
+            color: #000; 
+            padding: 3px 10px; 
+            border-radius: 10px; 
+            font-size: 0.75rem; 
             font-weight: 600;
-            font-size: 1.1rem;
+            text-transform: uppercase;
         }
-        .convo-time {
-            color: #666;
-            font-size: 0.8rem;
-        }
+        .convo-channel.slack { background: #4A154B; color: #fff; }
+        .convo-channel.telegram { background: #0088cc; color: #fff; }
+        .convo-time { color: #666; font-size: 0.8rem; margin-top: 5px; }
         .convo-messages {
             padding: 15px 20px;
-            max-height: 300px;
+            max-height: 250px;
             overflow-y: auto;
         }
-        .message {
-            padding: 10px 0;
-            border-bottom: 1px solid #1a1a1a;
-        }
+        .message { padding: 10px 0; border-bottom: 1px solid #1a1a1a; }
         .message:last-child { border-bottom: none; }
         .msg-role {
             font-size: 0.75rem;
@@ -100,189 +103,208 @@
             color: #666;
             margin-bottom: 5px;
         }
-        .msg-role.bot { color: #EA580C; }
-        .msg-text {
-            color: #ccc;
-            font-size: 0.9rem;
+        .msg-role.assistant { color: #EA580C; }
+        .msg-content { 
+            color: #ccc; 
             line-height: 1.5;
+            font-size: 0.9rem;
             white-space: pre-wrap;
         }
-        .update-info {
-            text-align: center;
-            padding: 20px;
-            color: #555;
-            font-size: 0.85rem;
-        }
-        .channel-badge {
+        .subagent-badge {
             background: #7c3aed;
-            color: white;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 0.75rem;
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 8px;
+            font-size: 0.7rem;
             margin-left: 10px;
         }
-        .channel-badge.telegram { background: #0088cc; }
-        .channel-badge.complete { background: #22c55e; }
-        .project-link {
-            color: #EA580C;
-            text-decoration: none;
-        }
-        .project-link:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>🤖 ForgeBot Live Dashboard</h1>
-        <div style="display: flex; align-items: center; gap: 15px;">
-            <span class="live-badge">● LIVE</span>
+        <div>
+            <h1>🤖 ForgeBot Dashboard</h1>
+            <div class="updated">Last updated: Jan 29, 2026 — 7:20 AM CST</div>
         </div>
+        <div class="live-badge">● LIVE</div>
     </div>
 
     <div class="stats-row">
         <div class="stat-card">
+            <div class="stat-num">10</div>
+            <div class="stat-label">Active Sessions</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-num">3</div>
+            <div class="stat-label">Slack Channels</div>
+        </div>
+        <div class="stat-card">
             <div class="stat-num">5</div>
-            <div class="stat-label">Slack Conversations</div>
+            <div class="stat-label">Sub-Agents Running</div>
         </div>
         <div class="stat-card">
-            <div class="stat-num">1</div>
-            <div class="stat-label">Projects Shipped 🚀</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-num">11</div>
-            <div class="stat-label">Total Sessions</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-num">0</div>
-            <div class="stat-label">Pending Approvals</div>
+            <div class="stat-num">$0.35</div>
+            <div class="stat-label">Est. Cost (Last Hour)</div>
         </div>
     </div>
 
-    <h2 class="section-title">🚀 Shipped Projects</h2>
-    
-    <div class="convos-grid" style="margin-bottom: 30px;">
-        <div class="convo-card">
-            <div class="convo-header">
-                <div>
-                    <span class="convo-user">🎨 Comic Book Generator</span>
-                    <span class="channel-badge complete">✅ LIVE</span>
-                </div>
-                <span class="convo-time">Just Shipped!</span>
-            </div>
-            <div class="convo-messages">
-                <div class="message">
-                    <div class="msg-role bot">Built by Ronnie</div>
-                    <div class="msg-text"><a href="https://forge-team.vercel.app/comic-generator" class="project-link" target="_blank">https://forge-team.vercel.app/comic-generator</a>
-
-Features:
-• Story → Comic panel breakdown
-• 6 styles: American, Manga, European, Noir, Superhero, Cartoon
-• AI-ready prompts for Kie AI generation
-• 4/6/8 panel layouts</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <h2 class="section-title">💬 Slack Conversations</h2>
+    <h2 class="section-title">📊 Recent Activity</h2>
     
     <div class="convos-grid">
-        <!-- Ronnie's Channel - Active -->
+        <!-- Main Session -->
         <div class="convo-card">
             <div class="convo-header">
                 <div>
-                    <span class="convo-user">Ronnie</span>
-                    <span class="channel-badge complete">Shipped!</span>
+                    <span class="convo-user">🏠 Main Session (Drew)</span>
+                    <span class="convo-channel telegram">Telegram</span>
                 </div>
-                <span class="convo-time">Just Now</span>
             </div>
             <div class="convo-messages">
                 <div class="message">
-                    <div class="msg-role bot">ForgeBot</div>
-                    <div class="msg-text">Done! Here's what I built:
-
-🎨 Comic Book Generator
-Live URL: https://forge-team.vercel.app/comic-generator
-
-Want me to generate a test comic right now? Give me a story idea and I'll create the actual images! 🖼️</div>
+                    <div class="msg-role assistant">Assistant</div>
+                    <div class="msg-content">Checking pairing requests and updating dashboard...</div>
                 </div>
             </div>
+            <div class="convo-time" style="padding: 10px 20px;">Updated just now • 22K tokens</div>
         </div>
 
-        <!-- Drew's Channel -->
+        <!-- Senior Dev Review Sub-Agent -->
         <div class="convo-card">
             <div class="convo-header">
                 <div>
-                    <span class="convo-user">Drew</span>
-                    <span class="channel-badge">Slack Channel</span>
+                    <span class="convo-user">senior-dev-review</span>
+                    <span class="subagent-badge">SUB-AGENT</span>
                 </div>
-                <span class="convo-time">Jan 29, 6:10 AM</span>
             </div>
             <div class="convo-messages">
                 <div class="message">
-                    <div class="msg-role bot">ForgeBot</div>
-                    <div class="msg-text">Hey Drew! 👋 Working on SoulPrint stuff with you on Telegram right now — just bumped up the hero headline to 35% bigger and got a couple sub-agents running. What's up?</div>
+                    <div class="msg-role assistant">Assistant</div>
+                    <div class="msg-content">Build successful! Pushing changes to main branch...</div>
                 </div>
             </div>
+            <div class="convo-time" style="padding: 10px 20px;">2 min ago • 97K tokens</div>
         </div>
 
-        <!-- Glenn's Conversation -->
+        <!-- Referral Dashboard Sub-Agent -->
         <div class="convo-card">
             <div class="convo-header">
                 <div>
-                    <span class="convo-user">Glenn</span>
-                    <span class="channel-badge">Slack DM</span>
+                    <span class="convo-user">referral-dashboard</span>
+                    <span class="subagent-badge">SUB-AGENT</span>
                 </div>
-                <span class="convo-time">Jan 28, 10:06 PM</span>
             </div>
             <div class="convo-messages">
                 <div class="message">
-                    <div class="msg-role bot">ForgeBot</div>
-                    <div class="msg-text">Hey Glenn! 👋 Quick heads up from Drew — to use ForgeBot, just DM me directly! You can ask me anything.</div>
+                    <div class="msg-role assistant">Assistant</div>
+                    <div class="msg-content">✅ Referral Analytics Dashboard Complete
+
+• Database schema with team codes
+• Signup flow updates with referral tracking
+• Admin dashboard at /admin/referrals</div>
                 </div>
             </div>
+            <div class="convo-time" style="padding: 10px 20px;">5 min ago • 41K tokens</div>
         </div>
 
-        <!-- Reggie's Conversation -->
+        <!-- Perplexity Sub-Agent -->
         <div class="convo-card">
             <div class="convo-header">
                 <div>
-                    <span class="convo-user">Reggie</span>
-                    <span class="channel-badge">Slack DM</span>
+                    <span class="convo-user">soulprint-perplexity</span>
+                    <span class="subagent-badge">SUB-AGENT</span>
                 </div>
-                <span class="convo-time">Jan 28, 10:03 PM</span>
             </div>
             <div class="convo-messages">
                 <div class="message">
-                    <div class="msg-role bot">ForgeBot</div>
-                    <div class="msg-text">LOL jk Drew's messing with you 😂</div>
+                    <div class="msg-role assistant">Assistant</div>
+                    <div class="msg-content">Done. Perplexity integration added to SoulPrint chat.
+Commit: 4d69904 - Pushed to main</div>
                 </div>
             </div>
+            <div class="convo-time" style="padding: 10px 20px;">8 min ago • 25K tokens</div>
         </div>
 
-        <!-- Ronnie's DM -->
+        <!-- Slack: Ronnie -->
         <div class="convo-card">
             <div class="convo-header">
                 <div>
-                    <span class="convo-user">Ronnie</span>
-                    <span class="channel-badge">Slack DM</span>
+                    <span class="convo-user">Ronnie (DM)</span>
+                    <span class="convo-channel slack">Slack</span>
                 </div>
-                <span class="convo-time">Jan 28, 9:41 PM</span>
             </div>
             <div class="convo-messages">
                 <div class="message">
-                    <div class="msg-role bot">ForgeBot</div>
-                    <div class="msg-text">Hey Ronnie! 👋 Drew wanted me to pass along a message:
-
-"You are amazing in every way."
-
-— Drew 💛</div>
+                    <div class="msg-role assistant">Assistant</div>
+                    <div class="msg-content">ANNOUNCE_SKIP</div>
                 </div>
             </div>
+            <div class="convo-time" style="padding: 10px 20px;">3 min ago • 26K tokens</div>
+        </div>
+
+        <!-- Slack: Glenn -->
+        <div class="convo-card">
+            <div class="convo-header">
+                <div>
+                    <span class="convo-user">Glenn (DM)</span>
+                    <span class="convo-channel slack">Slack</span>
+                </div>
+            </div>
+            <div class="convo-messages">
+                <div class="message">
+                    <div class="msg-role assistant">Assistant</div>
+                    <div class="msg-content">Hey Glenn! 👋 Quick heads up — to use ForgeBot, just DM me directly!</div>
+                </div>
+            </div>
+            <div class="convo-time" style="padding: 10px 20px;">16 hrs ago</div>
+        </div>
+
+        <!-- Safe Area Audit -->
+        <div class="convo-card">
+            <div class="convo-header">
+                <div>
+                    <span class="convo-user">safe-area-audit</span>
+                    <span class="subagent-badge">SUB-AGENT</span>
+                </div>
+            </div>
+            <div class="convo-messages">
+                <div class="message">
+                    <div class="msg-role assistant">Assistant</div>
+                    <div class="msg-content">✅ Safe-Area Audit Complete
+All files checked, fix applied to import page.
+Commit: 5e13fea</div>
+                </div>
+            </div>
+            <div class="convo-time" style="padding: 10px 20px;">10 min ago • 47K tokens</div>
+        </div>
+
+        <!-- Realtime Tasks -->
+        <div class="convo-card">
+            <div class="convo-header">
+                <div>
+                    <span class="convo-user">realtime-tasks</span>
+                    <span class="subagent-badge">SUB-AGENT</span>
+                </div>
+            </div>
+            <div class="convo-messages">
+                <div class="message">
+                    <div class="msg-role assistant">Assistant</div>
+                    <div class="msg-content">Done! Perplexity Sonar is now primary for news/research.
+Tavily remains as fallback.
+Commit: b449c92</div>
+                </div>
+            </div>
+            <div class="convo-time" style="padding: 10px 20px;">11 min ago • 22K tokens</div>
         </div>
     </div>
 
-    <div class="update-info">
-        Last updated: Jan 29, 2026 6:50 AM CST • Updates every heartbeat
+    <div style="margin-top: 40px; padding: 20px; background: #111; border-radius: 12px; border: 1px solid #222;">
+        <h3 style="color: #EA580C; margin-bottom: 15px;">🔧 System Status</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+            <div>✅ Slack Connected</div>
+            <div>✅ Telegram Connected</div>
+            <div>✅ No Pending Pairing Requests</div>
+            <div>✅ Sub-Agents Healthy</div>
+        </div>
     </div>
 </body>
 </html>
