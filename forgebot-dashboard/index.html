@@ -80,7 +80,6 @@
         }
         .session-channel.slack { background: #4A154B; }
         .session-channel.telegram { background: #0088cc; }
-        .session-channel.webchat { background: #333; }
         .session-message {
             background: #0a0a0a;
             border-radius: 8px;
@@ -105,19 +104,19 @@
     <div class="header">
         <div>
             <h1>🤖 ForgeBot Dashboard</h1>
-            <div class="updated">Last updated: Jan 29, 2026 15:55 CST</div>
+            <div class="updated">Last updated: Jan 29, 2026 16:05 CST</div>
         </div>
         <div class="live-badge">● LIVE</div>
     </div>
 
     <div class="stats-row">
         <div class="stat-card">
-            <div class="stat-value">10</div>
+            <div class="stat-value">4</div>
             <div class="stat-label">Active Sessions</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">4</div>
-            <div class="stat-label">Slack Channels</div>
+            <div class="stat-value">3</div>
+            <div class="stat-label">Deploys Today</div>
         </div>
         <div class="stat-card">
             <div class="stat-value">0</div>
@@ -129,101 +128,53 @@
         </div>
     </div>
 
-    <h2>Recent Activity</h2>
+    <h2>SoulPrint V1 Progress</h2>
     <div class="sessions-grid">
         <div class="session-card">
             <div class="session-header">
-                <span class="session-name">✅ Bug Fix: RLM Empty Check</span>
-                <span class="session-channel telegram">telegram</span>
+                <span class="session-name">✅ Perplexity Real-Time</span>
+                <span class="session-channel telegram">deployed</span>
             </div>
-            <div class="session-message">Added empty response check to RLM path<br>Matches Bedrock path pattern<br>Status: FIXED & DEPLOYED</div>
+            <div class="session-message">Made detection aggressive<br>Any factual question triggers search<br>Status: LIVE</div>
             <div class="session-meta">
-                <span>Sub-agent</span>
-                <span>Just now</span>
+                <span>Just deployed</span>
+                <span>16:02</span>
             </div>
         </div>
 
         <div class="session-card">
             <div class="session-header">
-                <span class="session-name">✅ Bug Fix: Embedding Validation</span>
-                <span class="session-channel telegram">telegram</span>
+                <span class="session-name">✅ Bug Fixes</span>
+                <span class="session-channel telegram">deployed</span>
             </div>
-            <div class="session-message">Added embedding count validation<br>Defensive filtering for undefined<br>Status: FIXED & DEPLOYED</div>
+            <div class="session-message">RLM empty check ✅<br>Embedding validation ✅<br>Zero silent failures</div>
             <div class="session-meta">
-                <span>Sub-agent</span>
-                <span>Just now</span>
+                <span>Deployed</span>
+                <span>15:55</span>
             </div>
         </div>
 
         <div class="session-card">
             <div class="session-header">
-                <span class="session-name">✅ SoulPrint QA: Memory</span>
-                <span class="session-channel telegram">telegram</span>
+                <span class="session-name">✅ QA Complete</span>
+                <span class="session-channel telegram">done</span>
             </div>
-            <div class="session-message">Memory Query API working ✅<br>Vector search + keyword fallback ✅<br>Embedding coverage: 56%</div>
+            <div class="session-message">Memory: working<br>Embeddings: 56% → processing<br>Learning: fixed</div>
             <div class="session-meta">
-                <span>Sub-agent</span>
-                <span>22 min ago</span>
+                <span>3 sub-agents</span>
+                <span>Earlier</span>
             </div>
         </div>
 
         <div class="session-card">
             <div class="session-header">
-                <span class="session-name">✅ SoulPrint QA: Embeddings</span>
-                <span class="session-channel telegram">telegram</span>
+                <span class="session-name">📋 V1 Punch List</span>
+                <span class="session-channel telegram">active</span>
             </div>
-            <div class="session-message">Pipeline healthy ✅<br>510/909 chunks embedded<br>Cron: every 5 min</div>
+            <div class="session-message">AI naming prompt - verify<br>Loading states - add<br>Error handling - improve</div>
             <div class="session-meta">
-                <span>Sub-agent</span>
-                <span>24 min ago</span>
-            </div>
-        </div>
-
-        <div class="session-card">
-            <div class="session-header">
-                <span class="session-name">📢 General Channel</span>
-                <span class="session-channel slack">slack</span>
-            </div>
-            <div class="session-message">Perplexity smart detection update</div>
-            <div class="session-meta">
-                <span>D0ABNHJ0TGC</span>
-                <span>6.7 hrs ago</span>
-            </div>
-        </div>
-
-        <div class="session-card">
-            <div class="session-header">
-                <span class="session-name">👤 Ben (DM)</span>
-                <span class="session-channel slack">slack</span>
-            </div>
-            <div class="session-message">SoulPrint update delivered</div>
-            <div class="session-meta">
-                <span>U09SQBT68RL</span>
-                <span>8 hrs ago</span>
-            </div>
-        </div>
-
-        <div class="session-card">
-            <div class="session-header">
-                <span class="session-name">👤 Ronnie (DM)</span>
-                <span class="session-channel slack">slack</span>
-            </div>
-            <div class="session-message">Assignment delivered ✅</div>
-            <div class="session-meta">
-                <span>D0ABJV580KU</span>
-                <span>8.6 hrs ago</span>
-            </div>
-        </div>
-
-        <div class="session-card">
-            <div class="session-header">
-                <span class="session-name">👤 Drew (DM)</span>
-                <span class="session-channel slack">slack</span>
-            </div>
-            <div class="session-message">SoulPrint hero headline update</div>
-            <div class="session-meta">
-                <span>D0ABXT09F3K</span>
-                <span>9.7 hrs ago</span>
+                <span>Tomorrow ready</span>
+                <span>In progress</span>
             </div>
         </div>
     </div>
