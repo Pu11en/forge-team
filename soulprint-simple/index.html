@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoulPrint: Your AI Best Friend</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #e5e5e5;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1.3rem;
+            color: #888;
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            color: #EA580C;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #222;
+        }
+        h3 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+        strong {
+            color: #fff;
+        }
+        .highlight {
+            background: linear-gradient(135deg, rgba(234, 88, 12, 0.15), rgba(234, 88, 12, 0.05));
+            border-left: 4px solid #EA580C;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 0 12px 12px 0;
+        }
+        .highlight p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+        .example {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .example-label {
+            font-size: 0.8rem;
+            color: #EA580C;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        ul {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 12px;
+            color: #ccc;
+        }
+        .emoji-list {
+            list-style: none;
+            margin-left: 0;
+        }
+        .emoji-list li {
+            padding-left: 35px;
+            position: relative;
+        }
+        .emoji-list li::before {
+            position: absolute;
+            left: 0;
+        }
+        .quote {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #EA580C;
+            text-align: center;
+            margin: 60px 0;
+            padding: 30px;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        .step-num {
+            background: #EA580C;
+            color: #000;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .step-content h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .step-content p {
+            margin: 0;
+        }
+        .bottom-line {
+            background: #111;
+            border: 1px solid #EA580C;
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        .bottom-line h2 {
+            border: none;
+            margin-top: 0;
+            text-align: center;
+        }
+        .bottom-line ul {
+            text-align: left;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🧠</div>
+        <h1>SoulPrint</h1>
+        <p class="subtitle">Your AI Best Friend — The Simple Version</p>
+
+        <h2>What Is SoulPrint?</h2>
+        <div class="highlight">
+            <p>SoulPrint is an AI that actually knows you.</p>
+        </div>
+        <p>Regular AI chatbots (like ChatGPT) forget everything after each conversation. They don't remember your name, your job, your favorite things, or what you talked about yesterday.</p>
+        <p><strong>SoulPrint is different. It remembers.</strong></p>
+
+        <h2>How Does It Work?</h2>
+        
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+                <h3>Import Your History</h3>
+                <p>Upload your old ChatGPT conversations. SoulPrint reads through them and learns how you talk, what you like, and who you are.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+                <h3>It Builds Your "SoulPrint"</h3>
+                <p>Think of it like a fingerprint, but for your personality. SoulPrint creates a profile of who you are based on everything you've shared.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+                <h3>It Remembers Everything</h3>
+                <p>Every time you chat, SoulPrint saves the important stuff. Next time you talk, it remembers.</p>
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="example-label">Example</div>
+            <p><strong>Monday:</strong> "I have a job interview on Friday"</p>
+            <p><strong>Friday:</strong> SoulPrint asks "How did your interview go?"</p>
+            <p style="margin-top: 15px; color: #888;">Regular AI can't do this. SoulPrint can.</p>
+        </div>
+
+        <h2>Why Text Messages?</h2>
+        <p>Your best friends live in your text messages. That's where real conversations happen.</p>
+        <p>SoulPrint works through <strong>SMS</strong> (text messages). You save it as a contact on your phone, just like a friend. Then you text it whenever you want.</p>
+        <div class="highlight">
+            <p>No app to download. No login. Just text.</p>
+        </div>
+
+        <h2>What Can It Do?</h2>
+        <p>SoulPrint isn't just a chatbot. It can actually <strong>do things</strong> for you:</p>
+        <ul class="emoji-list">
+            <li>📰 <strong>Get News</strong> — "What's happening in AI today?"</li>
+            <li>🖼️ <strong>Make Images</strong> — "Send me a picture of a sunset"</li>
+            <li>🌐 <strong>Build Websites</strong> — "Make me a portfolio site" → You get a real URL</li>
+            <li>📧 <strong>Send Emails</strong> — "Email my boss that I'll be late"</li>
+            <li>🔍 <strong>Research</strong> — "Find me the best restaurants nearby"</li>
+        </ul>
+        <p>All through text messages.</p>
+
+        <h2>The Memory That Works</h2>
+        <p>Most AI has a problem: it can only remember a little bit at a time. Give it too much information and it gets confused.</p>
+        <p>SoulPrint fixes this with smart memory that:</p>
+        <ul>
+            <li>Saves everything you say</li>
+            <li>Searches your history when you ask a question</li>
+            <li>Finds the relevant stuff and uses it to answer</li>
+        </ul>
+        <p>This means SoulPrint can remember <strong>years</strong> of conversations without getting confused.</p>
+
+        <h2>Who Is It For?</h2>
+        <ul class="emoji-list">
+            <li>🎓 <strong>Students</strong> who want help studying</li>
+            <li>💼 <strong>Professionals</strong> who need an assistant</li>
+            <li>🎨 <strong>Creators</strong> who want a brainstorming partner</li>
+            <li>👤 <strong>Anyone</strong> who's tired of repeating themselves to AI</li>
+        </ul>
+
+        <div class="bottom-line">
+            <h2>The Bottom Line</h2>
+            <p><strong>SoulPrint = AI + Memory + Your Personality</strong></p>
+            <ul>
+                <li>Knows you</li>
+                <li>Remembers everything</li>
+                <li>Lives in your text messages</li>
+                <li>Can actually do stuff</li>
+            </ul>
+        </div>
+
+        <p class="quote">"Your best friend lives in your messages. Now your AI can too."</p>
+    </div>
+</body>
+</html>
