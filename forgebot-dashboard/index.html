@@ -122,6 +122,7 @@
             font-size: 0.75rem;
             margin-left: 10px;
         }
+        .channel-badge.telegram { background: #0088cc; }
     </style>
 </head>
 <body>
@@ -135,15 +136,15 @@
     <div class="stats-row">
         <div class="stat-card">
             <div class="stat-num">4</div>
-            <div class="stat-label">Active Conversations</div>
+            <div class="stat-label">Slack Conversations</div>
         </div>
         <div class="stat-card">
-            <div class="stat-num">5</div>
-            <div class="stat-label">Approved Users</div>
+            <div class="stat-num">8</div>
+            <div class="stat-label">Active Subagents</div>
         </div>
         <div class="stat-card">
-            <div class="stat-num">12</div>
-            <div class="stat-label">Messages Today</div>
+            <div class="stat-num">13</div>
+            <div class="stat-label">Total Sessions</div>
         </div>
         <div class="stat-card">
             <div class="stat-num">0</div>
@@ -151,42 +152,38 @@
         </div>
     </div>
 
-    <h2 class="section-title">💬 Live Conversations</h2>
+    <h2 class="section-title">💬 Slack Conversations</h2>
     
     <div class="convos-grid">
-        <!-- Ronnie's Conversation -->
+        <!-- Ronnie's Conversation (Channel) -->
         <div class="convo-card">
             <div class="convo-header">
                 <div>
                     <span class="convo-user">Ronnie</span>
-                    <span class="channel-badge">Slack DM</span>
+                    <span class="channel-badge">Slack Channel</span>
                 </div>
-                <span class="convo-time">Active now</span>
+                <span class="convo-time">Jan 28, 10:31 PM</span>
             </div>
             <div class="convo-messages">
                 <div class="message">
-                    <div class="msg-role user">Ronnie</div>
-                    <div class="msg-text">What is forge not</div>
-                </div>
-                <div class="message">
                     <div class="msg-role bot">ForgeBot</div>
-                    <div class="msg-text">Hey Ronnie! 👋 I'm ForgeBot — an AI assistant for the ArcheForge team!</div>
-                </div>
-                <div class="message">
-                    <div class="msg-role user">Ronnie</div>
-                    <div class="msg-text">Who is Drew</div>
+                    <div class="msg-text">Hey Ronnie! 👋 I'm ForgeBot — an AI assistant for the ArcheForge team!
+
+What I can do:
+• Answer questions & research topics
+• Write code and help debug
+• Build web pages & tools
+• Draft documents & summarize content</div>
                 </div>
                 <div class="message">
                     <div class="msg-role bot">ForgeBot</div>
                     <div class="msg-text">Drew is the founder of ArcheForge and the one who set me up! He's the boss around here. 😄</div>
                 </div>
                 <div class="message">
-                    <div class="msg-role user">Ronnie</div>
-                    <div class="msg-text">What is the difference between mosfet and Bjt transistors</div>
-                </div>
-                <div class="message">
                     <div class="msg-role bot">ForgeBot</div>
-                    <div class="msg-text">Great question! BJT = current-controlled, MOSFET = voltage-controlled. BJT good for amplifiers, MOSFET good for power switching... 🔧</div>
+                    <div class="msg-text">Great question! BJT = current-controlled, MOSFET = voltage-controlled.
+• BJT: good for amplifiers, linear circuits
+• MOSFET: good for power switching, digital circuits 🔧</div>
                 </div>
             </div>
         </div>
@@ -198,7 +195,7 @@
                     <span class="convo-user">Glenn</span>
                     <span class="channel-badge">Slack DM</span>
                 </div>
-                <span class="convo-time">2:46 PM</span>
+                <span class="convo-time">Jan 28, 10:06 PM</span>
             </div>
             <div class="convo-messages">
                 <div class="message">
@@ -207,10 +204,10 @@
                 </div>
                 <div class="message">
                     <div class="msg-role bot">ForgeBot</div>
-                    <div class="msg-text">Hey Glenn! 👋 Quick heads up from Drew — to use ForgeBot, just DM me directly!</div>
+                    <div class="msg-text">Hey Glenn! 👋 Quick heads up from Drew — to use ForgeBot, just DM me directly! You can ask me anything.</div>
                 </div>
                 <div class="message">
-                    <div class="msg-role" style="color: #555;">No reply yet</div>
+                    <div class="msg-role" style="color: #555;">Awaiting reply...</div>
                 </div>
             </div>
         </div>
@@ -222,51 +219,118 @@
                     <span class="convo-user">Reggie</span>
                     <span class="channel-badge">Slack DM</span>
                 </div>
-                <span class="convo-time">2:43 PM</span>
+                <span class="convo-time">Jan 28, 10:03 PM</span>
             </div>
             <div class="convo-messages">
                 <div class="message">
                     <div class="msg-role bot">ForgeBot</div>
-                    <div class="msg-text">Hey Reggie! 👋 Drew wanted me to reach out — he wants you to use me to help build SoulPrint...</div>
+                    <div class="msg-text">Hey Reggie! 👋 Drew wanted me to reach out — he wants you to use me (ForgeBot) to help build SoulPrint...</div>
                 </div>
                 <div class="message">
                     <div class="msg-role bot">ForgeBot</div>
                     <div class="msg-text">LOL jk Drew's messing with you 😂</div>
                 </div>
                 <div class="message">
-                    <div class="msg-role" style="color: #555;">No reply yet</div>
+                    <div class="msg-role" style="color: #555;">Awaiting reply...</div>
                 </div>
             </div>
         </div>
 
-        <!-- Drew's Conversation -->
+        <!-- Ronnie's DM -->
         <div class="convo-card">
             <div class="convo-header">
                 <div>
-                    <span class="convo-user">Drew</span>
-                    <span class="channel-badge">Telegram</span>
+                    <span class="convo-user">Ronnie</span>
+                    <span class="channel-badge">Slack DM</span>
                 </div>
-                <span class="convo-time">Active now</span>
+                <span class="convo-time">Jan 28, 9:41 PM</span>
             </div>
             <div class="convo-messages">
                 <div class="message">
-                    <div class="msg-role user">Drew</div>
-                    <div class="msg-text">ok the forgebot dashboard no i need you to display live convos going on</div>
+                    <div class="msg-role bot">ForgeBot</div>
+                    <div class="msg-text">Hey Ronnie! 👋 Drew wanted me to pass along a message:
+
+"You are amazing in every way."
+
+— Drew 💛</div>
                 </div>
                 <div class="message">
-                    <div class="msg-role bot">ForgeBot</div>
-                    <div class="msg-text">Building live dashboard now...</div>
+                    <div class="msg-role" style="color: #555;">Awaiting reply...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title" style="margin-top: 30px;">🔧 Recent Subagent Work (SoulPrint)</h2>
+    
+    <div class="convos-grid">
+        <div class="convo-card">
+            <div class="convo-header">
+                <div>
+                    <span class="convo-user">button-orange-fix</span>
+                    <span class="channel-badge telegram">Subagent</span>
+                </div>
+                <span class="convo-time">Completed</span>
+            </div>
+            <div class="convo-messages">
+                <div class="message">
+                    <div class="msg-role bot">Result</div>
+                    <div class="msg-text">Changed "Enter SoulPrint" CTA button from white to orange (#EA580C). Commit 7043eaa pushed.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="convo-card">
+            <div class="convo-header">
+                <div>
+                    <span class="convo-user">white-bg-section</span>
+                    <span class="channel-badge telegram">Subagent</span>
+                </div>
+                <span class="convo-time">Completed</span>
+            </div>
+            <div class="convo-messages">
+                <div class="message">
+                    <div class="msg-role bot">Result</div>
+                    <div class="msg-text">Fixed "Meet the AI that actually gets you" section - changed to white background with proper text colors. Commit 68a1fe0.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="convo-card">
+            <div class="convo-header">
+                <div>
+                    <span class="convo-user">halftone-cursor-bg</span>
+                    <span class="channel-badge telegram">Subagent</span>
+                </div>
+                <span class="convo-time">Completed</span>
+            </div>
+            <div class="convo-messages">
+                <div class="message">
+                    <div class="msg-role bot">Result</div>
+                    <div class="msg-text">Created HalftoneBackground.tsx with cursor-following spotlight effect. Uses halftone-bg.png, mobile-aware. Commit b910b16.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="convo-card">
+            <div class="convo-header">
+                <div>
+                    <span class="convo-user">chat-ui-improvements</span>
+                    <span class="channel-badge telegram">Subagent</span>
+                </div>
+                <span class="convo-time">Completed</span>
+            </div>
+            <div class="convo-messages">
+                <div class="message">
+                    <div class="msg-role bot">Result</div>
+                    <div class="msg-text">CRITICAL fix: header/input now truly fixed. Rewrote layout with three independent fixed layers. User can exit chat. Commit 6c96f6c.</div>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="update-info">
-        Last updated: <span id="updateTime"></span> • Updates every 5 minutes via cron
+        Last updated: Jan 28, 2026 10:40 PM CST • Updates every heartbeat
     </div>
-
-    <script>
-        document.getElementById('updateTime').textContent = new Date().toLocaleString();
-    </script>
 </body>
 </html>
