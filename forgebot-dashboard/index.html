@@ -97,15 +97,28 @@
             padding: 40px;
         }
         h2 { margin-bottom: 20px; color: #ccc; }
+        .alert-card {
+            background: #1f0f0f;
+            border: 1px solid #ef444433;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .alert-card h3 { color: #ef4444; margin-bottom: 10px; }
     </style>
 </head>
 <body>
     <div class="header">
         <div>
             <h1>🤖 ForgeBot Dashboard</h1>
-            <div class="updated">Last updated: Jan 30, 2026 3:35 PM CST</div>
+            <div class="updated">Last updated: Jan 30, 2026 5:25 PM CST</div>
         </div>
         <div class="live-badge">● LIVE</div>
+    </div>
+
+    <div class="alert-card">
+        <h3>⚠️ Known Issue: Upload Failing</h3>
+        <p style="color: #ccc;">Supabase storage bucket "imports" doesn't exist. Drew has the SQL to fix it. Reggie in Slack also hit this issue.</p>
     </div>
 
     <div class="stats-row">
@@ -114,12 +127,12 @@
             <div class="stat-label">Active Sessions</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">1</div>
+            <div class="stat-value">6</div>
             <div class="stat-label">Slack Channels</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">6</div>
-            <div class="stat-label">Sub-agents Running</div>
+            <div class="stat-value">1</div>
+            <div class="stat-label">Sub-agents</div>
         </div>
         <div class="stat-card">
             <div class="stat-value">0</div>
@@ -131,69 +144,53 @@
     <div class="sessions">
         <div class="session-card">
             <div class="session-header">
+                <span class="session-name">Channel: d0abjv580ku</span>
+                <span class="session-channel slack">Slack</span>
+            </div>
+            <div class="message">
+                <div class="message-role assistant">ForgeBot</div>
+                🍌 Here's your Nano Banana banana! (Generated comic-style banana image for user asking about MidJourney alternatives)
+            </div>
+        </div>
+        <div class="session-card">
+            <div class="session-header">
                 <span class="session-name">Channel: d0abxt09f3k</span>
                 <span class="session-channel slack">Slack</span>
             </div>
             <div class="message">
                 <div class="message-role assistant">ForgeBot</div>
-                Those task IDs from this morning aren't returning results via API anymore — they may have expired or the status endpoints changed.
-
-Two options:
-1. Check https://kie.ai/logs directly (login with your account) — completed videos should be there for 14 days
-2. I can regenerate a fresh video right now
-
-Want me to regenerate it?
+                Those task IDs from this morning aren't returning results via API anymore — they may have expired. Check https://kie.ai/logs or I can regenerate.
+            </div>
+        </div>
+        <div class="session-card">
+            <div class="session-header">
+                <span class="session-name">Channel: d0abnhj0tgc (Reggie)</span>
+                <span class="session-channel slack">Slack</span>
+            </div>
+            <div class="message">
+                <div class="message-role assistant">ForgeBot</div>
+                Troubleshooting Reggie's upload issue — turns out it's the missing Supabase bucket. Fix coming from Drew.
             </div>
         </div>
     </div>
 
-    <h2 style="margin-top: 30px;">🔧 SoulPrint Dev Sessions</h2>
+    <h2 style="margin-top: 30px;">🔧 Recent Sub-agents</h2>
     <div class="sessions">
         <div class="session-card">
             <div class="session-header">
-                <span class="session-name">rlm-soulprint</span>
+                <span class="session-name">research-openhands</span>
                 <span class="session-channel telegram">Subagent</span>
             </div>
             <div class="message">
-                <div class="message-role assistant">Complete</div>
-                Wired up RLM /analyze endpoint • Deep personality analysis • Both builds pass ✓
-            </div>
-        </div>
-        <div class="session-card">
-            <div class="session-header">
-                <span class="session-name">admin-enhance</span>
-                <span class="session-channel telegram">Subagent</span>
-            </div>
-            <div class="message">
-                <div class="message-role assistant">Complete</div>
-                Built user detail pages, search/filter, SOUL.md display, export, stats charts → Deployed to soulprint-admin.vercel.app
-            </div>
-        </div>
-        <div class="session-card">
-            <div class="session-header">
-                <span class="session-name">storage-upload</span>
-                <span class="session-channel telegram">Subagent</span>
-            </div>
-            <div class="message">
-                <div class="message-role assistant">Complete</div>
-                Fixed large export issue • Skip raw upload, use batched table storage • Build passes ✓
-            </div>
-        </div>
-        <div class="session-card">
-            <div class="session-header">
-                <span class="session-name">verify-fix + fix-payload</span>
-                <span class="session-channel telegram">Subagent</span>
-            </div>
-            <div class="message">
-                <div class="message-role assistant">Complete</div>
-                Removed duplicate chunks from save-soulprint • Verified batching works • Pushed d05edf2
+                <div class="message-role assistant">Complete ✅</div>
+                Researched OpenHands (open-source Claude Code alternative). Notes saved to memory/openhands-notes.md
             </div>
         </div>
     </div>
 
-    <div style="margin-top: 40px; padding: 20px; background: #0f1f0f; border: 1px solid #22c55e33; border-radius: 12px;">
-        <h3 style="color: #22c55e; margin-bottom: 10px;">✅ System Status</h3>
-        <p style="color: #888;">No pairing requests pending • No errors detected • All services operational</p>
+    <div style="margin-top: 40px; padding: 20px; background: #1f1f0f; border: 1px solid #eab30833; border-radius: 12px;">
+        <h3 style="color: #eab308; margin-bottom: 10px;">⏳ Waiting On</h3>
+        <p style="color: #888;">• Drew to create Supabase "imports" bucket<br>• Then uploads will work for everyone</p>
     </div>
 </body>
 </html>
