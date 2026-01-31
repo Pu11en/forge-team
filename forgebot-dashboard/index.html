@@ -91,47 +91,29 @@
             margin-bottom: 5px;
         }
         .message-role.assistant { color: #EA580C; }
-        .no-activity {
-            color: #666;
-            text-align: center;
-            padding: 40px;
-        }
         h2 { margin-bottom: 20px; color: #ccc; }
-        .alert-card {
-            background: #1f0f0f;
-            border: 1px solid #ef444433;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 30px;
-        }
-        .alert-card h3 { color: #ef4444; margin-bottom: 10px; }
     </style>
 </head>
 <body>
     <div class="header">
         <div>
             <h1>🤖 ForgeBot Dashboard</h1>
-            <div class="updated">Last updated: Jan 30, 2026 5:25 PM CST</div>
+            <div class="updated">Last updated: Jan 30, 2026 6:05 PM CST</div>
         </div>
         <div class="live-badge">● LIVE</div>
     </div>
 
-    <div class="alert-card">
-        <h3>⚠️ Known Issue: Upload Failing</h3>
-        <p style="color: #ccc;">Supabase storage bucket "imports" doesn't exist. Drew has the SQL to fix it. Reggie in Slack also hit this issue.</p>
-    </div>
-
     <div class="stats-row">
         <div class="stat-card">
-            <div class="stat-value">8</div>
+            <div class="stat-value">5</div>
             <div class="stat-label">Active Sessions</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">6</div>
-            <div class="stat-label">Slack Channels</div>
+            <div class="stat-value">1</div>
+            <div class="stat-label">Slack DMs</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">1</div>
+            <div class="stat-value">3</div>
             <div class="stat-label">Sub-agents</div>
         </div>
         <div class="stat-card">
@@ -144,32 +126,12 @@
     <div class="sessions">
         <div class="session-card">
             <div class="session-header">
-                <span class="session-name">Channel: d0abjv580ku</span>
-                <span class="session-channel slack">Slack</span>
+                <span class="session-name">Ronnie Pequeno</span>
+                <span class="session-channel slack">Slack DM</span>
             </div>
             <div class="message">
                 <div class="message-role assistant">ForgeBot</div>
-                🍌 Here's your Nano Banana banana! (Generated comic-style banana image for user asking about MidJourney alternatives)
-            </div>
-        </div>
-        <div class="session-card">
-            <div class="session-header">
-                <span class="session-name">Channel: d0abxt09f3k</span>
-                <span class="session-channel slack">Slack</span>
-            </div>
-            <div class="message">
-                <div class="message-role assistant">ForgeBot</div>
-                Those task IDs from this morning aren't returning results via API anymore — they may have expired. Check https://kie.ai/logs or I can regenerate.
-            </div>
-        </div>
-        <div class="session-card">
-            <div class="session-header">
-                <span class="session-name">Channel: d0abnhj0tgc (Reggie)</span>
-                <span class="session-channel slack">Slack</span>
-            </div>
-            <div class="message">
-                <div class="message-role assistant">ForgeBot</div>
-                Troubleshooting Reggie's upload issue — turns out it's the missing Supabase bucket. Fix coming from Drew.
+                Helping Ronnie assemble comic panels from images. Asked for file uploads and layout details.
             </div>
         </div>
     </div>
@@ -178,19 +140,29 @@
     <div class="sessions">
         <div class="session-card">
             <div class="session-header">
-                <span class="session-name">research-openhands</span>
-                <span class="session-channel telegram">Subagent</span>
+                <span class="session-name">audit-import-pipeline</span>
+                <span class="session-channel telegram">Complete ✅</span>
             </div>
             <div class="message">
-                <div class="message-role assistant">Complete ✅</div>
-                Researched OpenHands (open-source Claude Code alternative). Notes saved to memory/openhands-notes.md
+                <div class="message-role assistant">Result</div>
+                Fixed error handling across import pipeline. Added failed state tracking, retry buttons, and migration for import_error column.
+            </div>
+        </div>
+        <div class="session-card">
+            <div class="session-header">
+                <span class="session-name">fix-mobile-upload</span>
+                <span class="session-channel telegram">Complete ✅</span>
+            </div>
+            <div class="message">
+                <div class="message-role assistant">Result</div>
+                Implemented chunked upload for mobile - splits files into 3MB chunks, uploads through server, assembles on Supabase.
             </div>
         </div>
     </div>
 
-    <div style="margin-top: 40px; padding: 20px; background: #1f1f0f; border: 1px solid #eab30833; border-radius: 12px;">
-        <h3 style="color: #eab308; margin-bottom: 10px;">⏳ Waiting On</h3>
-        <p style="color: #888;">• Drew to create Supabase "imports" bucket<br>• Then uploads will work for everyone</p>
+    <div style="margin-top: 40px; padding: 20px; background: #0f1f0f; border: 1px solid #22c55e33; border-radius: 12px;">
+        <h3 style="color: #22c55e; margin-bottom: 10px;">✅ System Status</h3>
+        <p style="color: #888;">No pairing requests pending • Import pipeline fixes deployed • All services operational</p>
     </div>
 </body>
 </html>
