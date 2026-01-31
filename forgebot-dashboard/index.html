@@ -51,10 +51,7 @@
         }
         .stat-value { font-size: 2.5rem; font-weight: 700; color: #EA580C; }
         .stat-label { color: #888; font-size: 0.9rem; margin-top: 5px; }
-        .sessions-grid {
-            display: grid;
-            gap: 20px;
-        }
+        .sessions-grid { display: grid; gap: 20px; }
         .session-card {
             background: #111;
             border: 1px solid #222;
@@ -75,7 +72,6 @@
             font-weight: 600;
         }
         .channel-telegram { background: #0088cc20; color: #0088cc; }
-        .channel-slack { background: #4A154B20; color: #E01E5A; }
         .session-meta { color: #666; font-size: 0.85rem; margin-bottom: 10px; }
         .session-tokens {
             display: flex;
@@ -111,7 +107,7 @@
     <div class="header">
         <div>
             <h1>🤖 ForgeBot Dashboard</h1>
-            <div class="updated">Last updated: Jan 30, 2026 10:50 PM CST</div>
+            <div class="updated">Last updated: Jan 30, 2026 11:00 PM CST</div>
         </div>
         <span class="live-badge">● LIVE</span>
     </div>
@@ -144,13 +140,12 @@
                 <span class="channel-badge channel-telegram">TELEGRAM</span>
             </div>
             <div class="session-meta">
-                Session: agent:main:telegram:dm:7414639817<br>
                 Model: claude-opus-4-5 · Active now<br>
-                Last: "lmk when i can try on mobile"
+                Status: Testing SoulPrint mobile
             </div>
             <div class="session-tokens">
-                <div class="token-bar"><div class="token-fill" style="width: 27%"></div></div>
-                <span class="token-text">55k / 200k</span>
+                <div class="token-bar"><div class="token-fill" style="width: 40%"></div></div>
+                <span class="token-text">81k / 200k</span>
             </div>
         </div>
 
@@ -160,25 +155,21 @@
                 <span class="channel-badge channel-telegram">TELEGRAM</span>
             </div>
             <div class="session-meta">
-                Session: agent:main:main<br>
                 Model: claude-opus-4-5 · Heartbeat active
             </div>
             <div class="session-tokens">
-                <div class="token-bar"><div class="token-fill" style="width: 54%"></div></div>
-                <span class="token-text">109k / 200k</span>
+                <div class="token-bar"><div class="token-fill" style="width: 64%"></div></div>
+                <span class="token-text">128k / 200k</span>
             </div>
         </div>
     </div>
 
     <div class="notice">
-        <div class="notice-title">📊 Recent Activity</div>
+        <div class="notice-title">📱 Current Activity</div>
         <div class="notice-text">
-            <strong>SoulPrint Dev Map:</strong> Complete analysis done with 3 sub-agents<br>
-            • Frontend analysis (15 pages, 40+ components)<br>
-            • API analysis (50 routes across 11 domains)<br>
-            • Lib architecture (5-layer RLM, hierarchical memory)<br>
-            <br>
-            <strong>Docs pushed:</strong> DEV_MAP.md, API_MAP.md, ARCHITECTURE.md
+            <strong>SoulPrint Mobile Test:</strong> Drew testing import flow on mobile<br>
+            <strong>Database:</strong> Cleaned and reset for fresh testing<br>
+            <strong>URL:</strong> soulprintengine.ai
         </div>
     </div>
 </body>
