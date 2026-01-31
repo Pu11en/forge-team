@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForgeBot Team Hub</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            color: #888;
+            margin-bottom: 2rem;
+        }
+        .links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            max-width: 900px;
+            width: 100%;
+        }
+        a {
+            display: block;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 20px;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.2s;
+        }
+        a:hover {
+            background: rgba(234,88,12,0.15);
+            border-color: #EA580C;
+            transform: translateY(-2px);
+        }
+        a h2 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+            color: #EA580C;
+        }
+        a p {
+            font-size: 0.9rem;
+            color: #888;
+        }
+        .badge {
+            display: inline-block;
+            background: #22c55e;
+            color: #000;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 8px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <h1>🤖 ForgeBot Team Hub</h1>
+    <p class="subtitle">Internal tools & demos</p>
+    
+    <div class="links">
+        <a href="/forgebot-dashboard/">
+            <h2>📊 Live Dashboard <span class="badge">LIVE</span></h2>
+            <p>Real-time session monitoring & team activity</p>
+        </a>
+        <a href="/forgebot-capabilities/">
+            <h2>⚡ Capabilities</h2>
+            <p>What ForgeBot can do</p>
+        </a>
+        <a href="/forgebot-deck/">
+            <h2>📑 Pitch Deck</h2>
+            <p>ForgeBot presentation materials</p>
+        </a>
+        <a href="/comic-generator/">
+            <h2>🎨 Comic Generator</h2>
+            <p>AI-powered comic book creator</p>
+        </a>
+        <a href="/soulprint-docs/">
+            <h2>📚 SoulPrint Docs</h2>
+            <p>Technical documentation</p>
+        </a>
+        <a href="/soulprint-import-preview/">
+            <h2>📥 Import Preview</h2>
+            <p>SoulPrint import flow demo</p>
+        </a>
+    </div>
+</body>
+</html>
