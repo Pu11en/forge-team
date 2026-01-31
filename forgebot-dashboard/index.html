@@ -50,10 +50,10 @@
             text-align: center;
         }
         .stat-value { font-size: 2.5rem; font-weight: 700; color: #EA580C; }
-        .stat-label { color: #888; margin-top: 5px; }
-        .sessions {
+        .stat-label { color: #888; font-size: 0.9rem; margin-top: 5px; }
+        .sessions-grid {
             display: grid;
-            gap: 15px;
+            gap: 20px;
         }
         .session-card {
             background: #111;
@@ -68,132 +68,115 @@
             margin-bottom: 15px;
         }
         .session-name { font-weight: 600; font-size: 1.1rem; }
-        .session-channel {
-            background: #1d4ed8;
-            padding: 4px 10px;
-            border-radius: 6px;
+        .channel-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
             font-size: 0.75rem;
-            text-transform: uppercase;
+            font-weight: 600;
         }
-        .session-channel.slack { background: #4A154B; }
-        .session-channel.telegram { background: #0088cc; }
-        .session-channel.active { background: #22c55e; color: #000; }
-        .message {
-            background: #0a0a0a;
-            border-radius: 8px;
-            padding: 12px;
+        .channel-telegram { background: #0088cc20; color: #0088cc; }
+        .channel-slack { background: #4A154B20; color: #E01E5A; }
+        .session-meta { color: #666; font-size: 0.85rem; margin-bottom: 10px; }
+        .session-tokens {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             margin-top: 10px;
-            font-size: 0.9rem;
-            line-height: 1.5;
         }
-        .message-role {
-            font-size: 0.75rem;
-            color: #888;
-            margin-bottom: 5px;
+        .token-bar {
+            flex: 1;
+            height: 8px;
+            background: #222;
+            border-radius: 4px;
+            overflow: hidden;
         }
-        .message-role.assistant { color: #EA580C; }
-        h2 { margin-bottom: 20px; color: #ccc; }
+        .token-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #EA580C, #f97316);
+            border-radius: 4px;
+        }
+        .token-text { color: #888; font-size: 0.8rem; min-width: 80px; text-align: right; }
+        .notice {
+            background: #1a1a2e;
+            border: 1px solid #EA580C40;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .notice-title { color: #EA580C; font-weight: 600; margin-bottom: 10px; }
+        .notice-text { color: #888; font-size: 0.9rem; line-height: 1.6; }
     </style>
 </head>
 <body>
     <div class="header">
         <div>
             <h1>🤖 ForgeBot Dashboard</h1>
-            <div class="updated">Last updated: Jan 30, 2026 10:20 PM CST</div>
+            <div class="updated">Last updated: Jan 30, 2026 10:45 PM CST</div>
         </div>
-        <div class="live-badge">● LIVE</div>
+        <span class="live-badge">● LIVE</span>
     </div>
 
     <div class="stats-row">
         <div class="stat-card">
-            <div class="stat-value">6</div>
+            <div class="stat-value">2</div>
             <div class="stat-label">Active Sessions</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">2</div>
-            <div class="stat-label">Slack Channels</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-value">3</div>
-            <div class="stat-label">Sub-agents</div>
+            <div class="stat-value">0</div>
+            <div class="stat-label">Pending Pairing</div>
         </div>
         <div class="stat-card">
             <div class="stat-value">0</div>
-            <div class="stat-label">Pending Requests</div>
+            <div class="stat-label">Slack Sessions</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">✓</div>
+            <div class="stat-label">All Systems OK</div>
         </div>
     </div>
 
-    <h2>📬 Slack Activity</h2>
-    <div class="sessions">
+    <h2 style="margin-bottom: 20px; color: #888;">Active Sessions</h2>
+    
+    <div class="sessions-grid">
         <div class="session-card">
             <div class="session-header">
-                <span class="session-name">🎨 Comic Book Generator</span>
-                <span class="session-channel active">Active Now</span>
+                <span class="session-name">Drew (Telegram DM)</span>
+                <span class="channel-badge channel-telegram">TELEGRAM</span>
             </div>
-            <div class="message">
-                <div class="message-role assistant">ForgeBot</div>
-                Helping user build a comic book from uploaded panels. Asked for speech bubble text and caption details for 4 panels (p1p1, p1p2, p1p3, p1p4).
+            <div class="session-meta">
+                Session: agent:main:telegram:dm:7414639817<br>
+                Model: claude-opus-4-5 · Active now
             </div>
-        </div>
-        <div class="session-card">
-            <div class="session-header">
-                <span class="session-name">🖼️ Panel Uploads</span>
-                <span class="session-channel active">Active Now</span>
-            </div>
-            <div class="message">
-                <div class="message-role assistant">ForgeBot</div>
-                Receiving comic panel images (p1p1.png, p4p2, etc). Waiting for full set before assembling into comic pages.
+            <div class="session-tokens">
+                <div class="token-bar"><div class="token-fill" style="width: 20%"></div></div>
+                <span class="token-text">41k / 200k</span>
             </div>
         </div>
-        <div class="session-card">
-            <div class="session-header">
-                <span class="session-name">Reggie - Import Help</span>
-                <span class="session-channel slack">Slack DM</span>
-            </div>
-            <div class="message">
-                <div class="message-role assistant">ForgeBot</div>
-                Troubleshooting upload issues. Asked for error details, file info, browser type. Awaiting response.
-            </div>
-        </div>
-    </div>
 
-    <h2 style="margin-top: 30px;">🔧 Recent Sub-agents</h2>
-    <div class="sessions">
         <div class="session-card">
             <div class="session-header">
-                <span class="session-name">fix-import-urgent</span>
-                <span class="session-channel telegram">Complete ✅</span>
+                <span class="session-name">Main Session</span>
+                <span class="channel-badge channel-telegram">TELEGRAM</span>
             </div>
-            <div class="message">
-                <div class="message-role assistant">Result</div>
-                Fixed fire-and-forget bug in queue-processing, removed client timeout, added 500MB limit. Admin reset endpoint enhanced with POST method.
+            <div class="session-meta">
+                Session: agent:main:main<br>
+                Model: claude-opus-4-5 · Active now
             </div>
-        </div>
-        <div class="session-card">
-            <div class="session-header">
-                <span class="session-name">audit-import-pipeline</span>
-                <span class="session-channel telegram">Complete ✅</span>
-            </div>
-            <div class="message">
-                <div class="message-role assistant">Result</div>
-                Fixed error handling across import pipeline. Added failed state tracking, retry buttons, and migration for import_error column.
-            </div>
-        </div>
-        <div class="session-card">
-            <div class="session-header">
-                <span class="session-name">fix-mobile-upload</span>
-                <span class="session-channel telegram">Complete ✅</span>
-            </div>
-            <div class="message">
-                <div class="message-role assistant">Result</div>
-                Implemented chunked upload for mobile - splits files into 3MB chunks, uploads through server, assembles on Supabase.
+            <div class="session-tokens">
+                <div class="token-bar"><div class="token-fill" style="width: 38%"></div></div>
+                <span class="token-text">76k / 200k</span>
             </div>
         </div>
     </div>
 
-    <div style="margin-top: 40px; padding: 20px; background: #0f1f0f; border: 1px solid #22c55e33; border-radius: 12px;">
-        <h3 style="color: #22c55e; margin-bottom: 10px;">✅ System Status</h3>
-        <p style="color: #888;">No pairing requests • 🎨 Ronnie assembling comic page • Comic workflow active</p>
+    <div class="notice">
+        <div class="notice-title">🔧 Recent Fix Applied</div>
+        <div class="notice-text">
+            <strong>Image Size Limit:</strong> Slack images now capped at 5MB to prevent LLM crashes<br>
+            <strong>Session Isolation:</strong> Each Slack DM user now gets their own session (per-channel-peer)<br>
+            <br>
+            Team members can now send images without breaking the bot. Images over 5MB will be skipped.
+        </div>
     </div>
 </body>
 </html>
