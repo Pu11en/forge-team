@@ -29,100 +29,73 @@
         .token-bar { flex: 1; height: 8px; background: #222; border-radius: 4px; overflow: hidden; }
         .token-fill { height: 100%; background: linear-gradient(90deg, #EA580C, #f97316); border-radius: 4px; }
         .token-text { color: #888; font-size: 0.8rem; min-width: 80px; text-align: right; }
+        h2 { margin-bottom: 20px; color: #888; }
     </style>
 </head>
 <body>
     <div class="header">
         <div>
             <h1>🤖 ForgeBot Dashboard</h1>
-            <div class="updated">Last updated: Feb 1, 2026 4:00 AM CST</div>
+            <div class="updated">Last updated: Feb 1, 2026 7:00 AM CST</div>
         </div>
         <span class="live-badge">● LIVE</span>
     </div>
     <div class="stats-row">
-        <div class="stat-card"><div class="stat-value">8</div><div class="stat-label">Active Sessions (24h)</div></div>
+        <div class="stat-card"><div class="stat-value">7</div><div class="stat-label">Active Sessions (3h)</div></div>
         <div class="stat-card"><div class="stat-value">0</div><div class="stat-label">Pending Pairing</div></div>
-        <div class="stat-card"><div class="stat-value">3</div><div class="stat-label">Slack Sessions</div></div>
+        <div class="stat-card"><div class="stat-value">5</div><div class="stat-label">Builds Deployed</div></div>
         <div class="stat-card"><div class="stat-value">✓</div><div class="stat-label">All Systems OK</div></div>
     </div>
-    <h2 style="margin-bottom: 20px; color: #888;">Active Sessions</h2>
+    <h2>Active Sessions</h2>
     <div class="sessions-grid">
         <div class="session-card">
             <div class="session-header">
                 <span class="session-name">Drew · Telegram DM</span>
                 <span class="channel-badge channel-telegram">TELEGRAM</span>
             </div>
-            <div class="session-meta">Model: claude-opus-4-5 · Last: Referral codes for SoulPrint</div>
+            <div class="session-meta">Model: claude-opus-4-5 · Debugging WebSocket proxy config</div>
             <div class="session-tokens">
-                <div class="token-bar"><div class="token-fill" style="width: 39%"></div></div>
-                <span class="token-text">78k / 200k</span>
+                <div class="token-bar"><div class="token-fill" style="width: 91%"></div></div>
+                <span class="token-text">181k / 200k</span>
             </div>
+        </div>
+    </div>
+    <h2 style="margin-top: 30px;">Recent Builds (Today)</h2>
+    <div class="sessions-grid">
+        <div class="session-card">
+            <div class="session-header">
+                <span class="session-name">SoulPrint Clinical</span>
+                <span class="channel-badge channel-subagent">DEPLOYED ✓</span>
+            </div>
+            <div class="session-meta">Healthcare/HIPAA landing page · https://soulprint-clinical.vercel.app</div>
         </div>
         <div class="session-card">
             <div class="session-header">
-                <span class="session-name">Reggie Alcos · Slack DM</span>
-                <span class="channel-badge channel-slack">SLACK</span>
+                <span class="session-name">The Pantheon</span>
+                <span class="channel-badge channel-subagent">DEPLOYED ✓</span>
             </div>
-            <div class="session-meta">Model: claude-opus-4-5 · Feedback: wants web search in SoulPrint</div>
-            <div class="session-tokens">
-                <div class="token-bar"><div class="token-fill" style="width: 24%"></div></div>
-                <span class="token-text">49k / 200k</span>
-            </div>
+            <div class="session-meta">ArcheForge persona showcase · https://archeforge-pantheon.vercel.app</div>
         </div>
         <div class="session-card">
             <div class="session-header">
-                <span class="session-name">Drew · Slack DM</span>
-                <span class="channel-badge channel-slack">SLACK</span>
+                <span class="session-name">Adios Motherfucker</span>
+                <span class="channel-badge channel-subagent">DEPLOYED ✓</span>
             </div>
-            <div class="session-meta">Model: claude-opus-4-5 · Sent update to Reggie re: web search</div>
-            <div class="session-tokens">
-                <div class="token-bar"><div class="token-fill" style="width: 14%"></div></div>
-                <span class="token-text">29k / 200k</span>
-            </div>
+            <div class="session-meta">Streetwear drop page · https://adios-mf.vercel.app</div>
         </div>
         <div class="session-card">
             <div class="session-header">
-                <span class="session-name">Nicholas Hill · Slack DM</span>
-                <span class="channel-badge channel-slack">SLACK</span>
+                <span class="session-name">SoulPrint HomeBase</span>
+                <span class="channel-badge channel-subagent">DEPLOYED ✓</span>
             </div>
-            <div class="session-meta">Model: claude-opus-4-5 · Asked about ForgeBot capabilities</div>
-            <div class="session-tokens">
-                <div class="token-bar"><div class="token-fill" style="width: 9%"></div></div>
-                <span class="token-text">17k / 200k</span>
-            </div>
+            <div class="session-meta">Hardware device landing · https://soulprint-device.vercel.app</div>
         </div>
         <div class="session-card">
             <div class="session-header">
-                <span class="session-name">build-cecis · Sub-agent</span>
-                <span class="channel-badge channel-subagent">COMPLETE</span>
+                <span class="session-name">SoulPrint Companion</span>
+                <span class="channel-badge channel-subagent">DEPLOYED ✓</span>
             </div>
-            <div class="session-meta">Built Ceci's Candy Syndicate landing page · Deployed ✓</div>
-            <div class="session-tokens">
-                <div class="token-bar"><div class="token-fill" style="width: 12%"></div></div>
-                <span class="token-text">23k / 200k</span>
-            </div>
-        </div>
-        <div class="session-card">
-            <div class="session-header">
-                <span class="session-name">build-halfsalt · Sub-agent</span>
-                <span class="channel-badge channel-subagent">COMPLETE</span>
-            </div>
-            <div class="session-meta">Built HalfSalt/FullBurn dual-brand site · Deployed ✓</div>
-            <div class="session-tokens">
-                <div class="token-bar"><div class="token-fill" style="width: 12%"></div></div>
-                <span class="token-text">23k / 200k</span>
-            </div>
-        </div>
-        <div class="session-card">
-            <div class="session-header">
-                <span class="session-name">nightly-build-git-standup · Sub-agent</span>
-                <span class="channel-badge channel-subagent">COMPLETE</span>
-            </div>
-            <div class="session-meta">Built Git Standup CLI tool · Ready for use ✓</div>
-            <div class="session-tokens">
-                <div class="token-bar"><div class="token-fill" style="width: 10%"></div></div>
-                <span class="token-text">19k / 200k</span>
-            </div>
+            <div class="session-meta">AI companion landing · https://soulprint-companion.vercel.app</div>
         </div>
     </div>
 </body>
